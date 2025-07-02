@@ -1,9 +1,14 @@
 import { serve } from 'https://deno.land/std@0.203.0/http/server.ts'
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.50.2'
 
 const SOURCE_URL =
     'https://en.help.roblox.com/hc/en-us/articles/203314410-Exchange-Robux-For-Real-Money-DevEx'
 const FALLBACK_RATE = 0.0035
+
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+}
 
 /**
  * Extract the USD value from the Roblox DevEx FAQ HTML and convert it to a
@@ -20,7 +25,12 @@ export function parseRateFromHtml(html: string): number | null {
     return +(usd / 100_000).toFixed(6)
 }
 
-serve(async (_req) => {
+serve(async (req) => {
+    // Handle CORS preflight requests
+    if (req.method === 'OPTIONS') {
+        return new Response(null, { headers: corsHeaders });
+    }
+
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!
     // Prefer service-role key when available so the function can write.
     const supabaseKey =
@@ -35,6 +45,7 @@ serve(async (_req) => {
     let rate = FALLBACK_RATE
 
     try {
+        console.log('Fetching DevEx FAQ from:', SOURCE_URL)
         const response = await fetch(SOURCE_URL, {
             headers: {
                 'User-Agent':
@@ -44,8 +55,14 @@ serve(async (_req) => {
 
         if (response.ok) {
             const html = await response.text()
+            console.log('HTML fetched, parsing rate...')
             const parsed = parseRateFromHtml(html)
-            if (parsed) rate = parsed
+            if (parsed) {
+                rate = parsed
+                console.log('Successfully parsed rate:', rate)
+            } else {
+                console.log('Failed to parse rate from HTML, using fallback:', FALLBACK_RATE)
+            }
         } else {
             console.error(
                 'Failed to fetch DevEx FAQ',
@@ -75,8 +92,12 @@ serve(async (_req) => {
                 rate,
                 source_url: SOURCE_URL,
             })
-        if (insertError)
+        
+        if (insertError) {
             console.error('Error inserting devex rate', insertError)
+        } else {
+            console.log('Successfully inserted new rate:', rate)
+        }
 
         // Compare to previous and alert when changed
         if (last && last.rate !== rate) {
@@ -98,7 +119,7 @@ serve(async (_req) => {
         console.error('Error storing devex rate', err)
     }
 
-    return new Response(JSON.stringify({ success: true, rate }), {
-        headers: { 'Content-Type': 'application/json' },
+    return new Response(JSON.stringify({ success: true, rate, source_url: SOURCE_URL }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     })
 })
