@@ -1,0 +1,152 @@
+name: 🐛 Bug Report
+description: File a bug report to help us improve {s}ee Dashboard
+title: '[Bug]: '
+labels: ['bug', 'needs-triage']
+assignees: []
+body:
+    - type: markdown
+      attributes:
+          value: |
+              Thanks for taking the time to report a bug! Please fill out this form as completely as possible.
+
+              💡 **Tip**: Before creating a new issue, please search existing issues to see if your problem has already been reported.
+
+    - type: checkboxes
+      id: terms
+      attributes:
+          label: Prerequisites
+          description: Please confirm the following before submitting your bug report
+          options:
+              - label: I have searched existing issues to ensure this bug hasn't been reported
+                required: true
+              - label: I have checked the documentation and this doesn't appear to be intended behavior
+                required: true
+              - label: I am using the latest version of the application
+                required: true
+
+    - type: textarea
+      id: bug-description
+      attributes:
+          label: 🐛 Bug Description
+          description: A clear and concise description of what the bug is
+          placeholder: Describe the bug here...
+      validations:
+          required: true
+
+    - type: textarea
+      id: steps-to-reproduce
+      attributes:
+          label: 🔄 Steps to Reproduce
+          description: Steps to reproduce the behavior
+          placeholder: |
+              1. Go to '...'
+              2. Click on '...'
+              3. Scroll down to '...'
+              4. See error
+      validations:
+          required: true
+
+    - type: textarea
+      id: expected-behavior
+      attributes:
+          label: ✅ Expected Behavior
+          description: A clear description of what you expected to happen
+          placeholder: Describe what should happen...
+      validations:
+          required: true
+
+    - type: textarea
+      id: actual-behavior
+      attributes:
+          label: ❌ Actual Behavior
+          description: What actually happened instead
+          placeholder: Describe what actually happened...
+      validations:
+          required: true
+
+    - type: dropdown
+      id: browser
+      attributes:
+          label: 🌐 Browser
+          description: Which browser are you using?
+          options:
+              - Chrome
+              - Firefox
+              - Safari
+              - Edge
+              - Other (specify in additional context)
+      validations:
+          required: true
+
+    - type: dropdown
+      id: device
+      attributes:
+          label: 📱 Device Type
+          description: What device are you using?
+          options:
+              - Desktop
+              - Tablet
+              - Mobile
+              - Other (specify in additional context)
+      validations:
+          required: true
+
+    - type: input
+      id: os
+      attributes:
+          label: 💻 Operating System
+          description: What operating system are you using?
+          placeholder: 'e.g., Windows 11, macOS 13.0, Ubuntu 22.04'
+      validations:
+          required: true
+
+    - type: textarea
+      id: console-errors
+      attributes:
+          label: 🔍 Console Errors
+          description: Any errors in the browser console? (Press F12 → Console tab)
+          placeholder: Paste any console errors here...
+          render: text
+
+    - type: textarea
+      id: screenshots
+      attributes:
+          label: 📸 Screenshots
+          description: If applicable, add screenshots to help explain your problem
+          placeholder: Drag and drop screenshots here or paste image URLs
+
+    - type: dropdown
+      id: dashboard-section
+      attributes:
+          label: 📊 Dashboard Section
+          description: Which section of the dashboard is affected?
+          options:
+              - Ecommerce Dashboard
+              - Analytics Dashboard
+              - Project Dashboard
+              - Marketing Dashboard
+              - Customer Management
+              - Product Management
+              - Authentication
+              - Settings
+              - Other (specify in additional context)
+
+    - type: dropdown
+      id: severity
+      attributes:
+          label: 🚨 Severity
+          description: How severe is this bug?
+          options:
+              - Low - Minor inconvenience
+              - Medium - Affects functionality but workaround exists
+              - High - Major functionality broken
+              - Critical - Application unusable
+      validations:
+          required: true
+
+    - type: textarea
+      id: additional-context
+      attributes:
+          label: 📝 Additional Context
+          description: Add any other context about the problem here
+          placeholder: Any additional information that might be helpful...

@@ -1,0 +1,154 @@
+name: ✨ Feature Request
+description: Suggest a new feature for {s}ee Dashboard
+title: '[Feature]: '
+labels: ['enhancement', 'needs-triage']
+assignees: []
+body:
+    - type: markdown
+      attributes:
+          value: |
+              Thanks for suggesting a new feature! Your ideas help make {s}ee Dashboard better for all Roblox developers.
+
+              💡 **Tip**: Before submitting, please search existing issues to see if your feature has already been requested.
+
+    - type: checkboxes
+      id: terms
+      attributes:
+          label: Prerequisites
+          description: Please confirm the following before submitting your feature request
+          options:
+              - label: I have searched existing issues to ensure this feature hasn't been requested
+                required: true
+              - label: I have checked the documentation to confirm this feature doesn't already exist
+                required: true
+              - label: This feature would benefit other Roblox developers, not just my specific use case
+                required: true
+
+    - type: textarea
+      id: problem-statement
+      attributes:
+          label: 🎯 Problem Statement
+          description: What problem does this feature solve?
+          placeholder: 'As a [type of user], I want [goal] so that [benefit]...'
+      validations:
+          required: true
+
+    - type: textarea
+      id: proposed-solution
+      attributes:
+          label: 💡 Proposed Solution
+          description: Describe your ideal solution
+          placeholder: Describe how you envision this feature working...
+      validations:
+          required: true
+
+    - type: textarea
+      id: alternatives
+      attributes:
+          label: 🔄 Alternative Solutions
+          description: Have you considered any alternative approaches?
+          placeholder: Describe any alternative solutions you've considered...
+
+    - type: dropdown
+      id: feature-category
+      attributes:
+          label: 📊 Feature Category
+          description: Which area of the dashboard would this feature affect?
+          options:
+              - Financial Intelligence Dashboard
+              - LiveOps & Analytics
+              - Studio Management
+              - User Interface & Experience
+              - Data Visualization
+              - Authentication & Security
+              - API Integration
+              - Performance & Optimization
+              - Mobile Experience
+              - Internationalization
+              - Other (specify below)
+      validations:
+          required: true
+
+    - type: dropdown
+      id: user-type
+      attributes:
+          label: 👤 Primary User Type
+          description: Who would primarily benefit from this feature?
+          options:
+              - Indie Developers
+              - Small Studios (2-10 people)
+              - Medium Studios (10-50 people)
+              - Large Studios (50+ people)
+              - All User Types
+              - Administrators/IT
+              - Other (specify below)
+      validations:
+          required: true
+
+    - type: dropdown
+      id: priority
+      attributes:
+          label: 🚨 Priority Level
+          description: How important is this feature to you?
+          options:
+              - Low - Nice to have
+              - Medium - Would improve my workflow
+              - High - Significantly impacts my productivity
+              - Critical - Blocking my ability to use the platform effectively
+      validations:
+          required: true
+
+    - type: textarea
+      id: user-story
+      attributes:
+          label: 📖 User Story
+          description: Describe how you would use this feature
+          placeholder: |
+              1. I would navigate to...
+              2. Then I would...
+              3. The feature would allow me to...
+              4. This would help me because...
+
+    - type: textarea
+      id: acceptance-criteria
+      attributes:
+          label: ✅ Acceptance Criteria
+          description: What would make this feature complete?
+          placeholder: |
+              - [ ] Feature should...
+              - [ ] User should be able to...
+              - [ ] System should...
+
+    - type: textarea
+      id: mockups
+      attributes:
+          label: 🎨 Mockups/Wireframes
+          description: Any visual ideas for how this feature should look?
+          placeholder: Drag and drop images here or describe the visual layout...
+
+    - type: dropdown
+      id: implementation-complexity
+      attributes:
+          label: ⚙️ Estimated Complexity
+          description: How complex do you think this feature would be to implement?
+          options:
+              - Simple - Minor UI changes or data additions
+              - Medium - New component or workflow
+              - Complex - Major feature requiring significant development
+              - Not sure
+      validations:
+          required: true
+
+    - type: textarea
+      id: business-impact
+      attributes:
+          label: 💼 Business Impact
+          description: How would this feature impact Roblox game development or studio operations?
+          placeholder: Describe the potential business benefits...
+
+    - type: textarea
+      id: additional-context
+      attributes:
+          label: 📝 Additional Context
+          description: Any other information that would be helpful
+          placeholder: Links, references, examples from other tools, etc...
