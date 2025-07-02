@@ -39,29 +39,33 @@ export interface ApiResponse<T> {
 
 // Mock adapter types
 export interface MockAdapterType {
-    signIn: (email: string, password: string) => Promise<ApiResponse<any>>
-    signUp: (data: any) => Promise<ApiResponse<any>>
-    getFinancialData: (projectId: string) => Promise<ApiResponse<any>>
-    getProjects: () => Promise<ApiResponse<any>>
-    getUserProfile: (userId: string) => Promise<ApiResponse<any>>
-    createProject: (data: any) => Promise<ApiResponse<any>>
-    updateProject: (data: any) => Promise<ApiResponse<any>>
+    signIn: (email: string, password: string) => Promise<ApiResponse<UserData>>
+    signUp: (data: UserData) => Promise<ApiResponse<UserData>>
+    getFinancialData: (
+        projectId: string,
+    ) => Promise<ApiResponse<FinancialMetricData[]>>
+    getProjects: () => Promise<ApiResponse<ProjectData[]>>
+    getUserProfile: (userId: string) => Promise<ApiResponse<UserData>>
+    createProject: (data: ProjectData) => Promise<ApiResponse<ProjectData>>
+    updateProject: (data: ProjectData) => Promise<ApiResponse<ProjectData>>
 }
 
 // Supabase service types
 export interface SupabaseServiceType {
-    signIn: (email: string, password: string) => Promise<ApiResponse<any>>
+    signIn: (email: string, password: string) => Promise<ApiResponse<UserData>>
     signUp: (
         email: string,
         password: string,
         userData: UserData,
-    ) => Promise<ApiResponse<any>>
-    getFinancialMetrics: (projectId: string) => Promise<ApiResponse<any>>
-    getProjects: (limit?: number) => Promise<ApiResponse<any>>
-    getUserProfile: (userId: string) => Promise<ApiResponse<any>>
-    createProject: (data: ProjectData) => Promise<ApiResponse<any>>
+    ) => Promise<ApiResponse<UserData>>
+    getFinancialMetrics: (
+        projectId: string,
+    ) => Promise<ApiResponse<FinancialMetricData[]>>
+    getProjects: (limit?: number) => Promise<ApiResponse<ProjectData[]>>
+    getUserProfile: (userId: string) => Promise<ApiResponse<UserData>>
+    createProject: (data: ProjectData) => Promise<ApiResponse<ProjectData>>
     updateProject: (
         projectId: string,
         data: Partial<ProjectData>,
-    ) => Promise<ApiResponse<any>>
+    ) => Promise<ApiResponse<ProjectData>>
 }
