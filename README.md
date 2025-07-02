@@ -283,3 +283,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
     <a href="https://github.com/yourusername/see_dashboard1/issues">Request Feature</a>
   </p>
 </div>
+#   T r i g g e r   e d g e   d e p l o y  
+ 
