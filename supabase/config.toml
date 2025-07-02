@@ -1,0 +1,4 @@
+project_id = "htykqrmczqcokvmrsfui"
+
+[functions.scrapeDevexRate]
+verify_jwt = false
