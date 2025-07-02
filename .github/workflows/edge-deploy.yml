@@ -19,6 +19,6 @@ jobs:
                   version: latest
 
             - name: Deploy Edge Function
-              run: supabase functions deploy scrapeDevexRate --project-ref ${{ secrets.VITE_SUPABASE_URL }}
+              run: supabase functions deploy scrapeDevexRate --project-ref htykqrmczqockvmrsfui
               env:
                   SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
