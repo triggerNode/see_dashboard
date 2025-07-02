@@ -29,3 +29,6 @@ build
 # See env files
 .env.local
 .env.*.local
+
+# Supabase
+supabase/config.local.toml

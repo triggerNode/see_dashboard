@@ -1,3 +1,4 @@
+# Trigger deployment workflow (v2)
 name: Deploy Supabase Edge Functions
 
 # Trigger deployment workflow
