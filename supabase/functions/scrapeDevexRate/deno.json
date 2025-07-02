@@ -1,0 +1,3 @@
+{
+    "importMap": "https://deno.land/x/supabase_edge_runtime/import_map.json"
+}

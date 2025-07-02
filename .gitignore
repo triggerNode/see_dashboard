@@ -25,3 +25,7 @@ build
 *.sln
 *.sw?
 .vite-cache/
+
+# See env files
+.env.local
+.env.*.local

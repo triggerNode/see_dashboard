@@ -114,6 +114,7 @@ Password: 123Qwe
 
 -   **Node.js** (version 18 or higher)
 -   **npm** or **yarn**
+-   **Supabase CLI** (optional, for local development)
 
 ### Installation
 
@@ -130,14 +131,33 @@ cd see_dashboard1
 npm install
 ```
 
-3. **Start development server**
+3. **Set up Supabase environment**
+
+```bash
+# Copy the example environment file
+cp .env.example .env.local
+
+# Add your Supabase credentials to .env.local
+# VITE_SUPABASE_URL=your_supabase_project_url
+# VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+4. **Start development server**
 
 ```bash
 npm run dev
 ```
 
-4. **Open your browser**
+5. **Open your browser**
    Navigate to `http://localhost:5173`
+
+### Supabase Setup
+
+The project is configured to use Supabase for data storage and authentication:
+
+-   Run `npm run supabase:link` to connect the CLI to your project
+-   For local development with Supabase, install the CLI and run `npm run supabase:start`
+-   All API calls use the client in `src/lib/supabaseClient.ts`
 
 ### Build for Production
 

@@ -12,6 +12,58 @@ This guide covers deployment strategies and configurations for the {s}ee Dashboa
 -   npm or yarn
 -   Git
 -   Access to your chosen deployment platform
+-   Supabase account and project
+
+## 🗄️ Supabase Configuration
+
+### Setting Up Supabase
+
+1. **Create a Supabase Project**
+
+    - Visit [supabase.com](https://supabase.com) and sign in
+    - Create a new project and note your project URL and API keys
+    - Current project: `htykqrmczqockvmrsfui`
+
+2. **Configure Environment Variables**
+
+    For local development:
+
+    ```bash
+    # .env.local
+    VITE_SUPABASE_URL=https://htykqrmczqockvmrsfui.supabase.co
+    VITE_SUPABASE_ANON_KEY=your_anon_key
+    ```
+
+    For CI/CD pipelines, add these as secrets in your deployment platform.
+
+3. **Database Schema Setup**
+
+    ```sql
+    -- Example schema (to be expanded)
+    CREATE TABLE financial_metrics (
+      id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+      project_id UUID NOT NULL,
+      metric_name TEXT NOT NULL,
+      metric_value NUMERIC NOT NULL,
+      date_recorded TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+      created_by UUID REFERENCES auth.users(id)
+    );
+
+    -- Add row-level security policies
+    ALTER TABLE financial_metrics ENABLE ROW LEVEL SECURITY;
+
+    CREATE POLICY "Users can view their own data" ON financial_metrics
+      FOR SELECT USING (auth.uid() = created_by);
+
+    CREATE POLICY "Users can insert their own data" ON financial_metrics
+      FOR INSERT WITH CHECK (auth.uid() = created_by);
+    ```
+
+4. **Linking Local CLI**
+
+    ```bash
+    npm run supabase:link
+    ```
 
 ## 🏗️ Build Process
 
@@ -262,41 +314,36 @@ docker build -t see-dashboard .
 docker run -p 3000:80 see-dashboard
 ```
 
-## ⚙️ Environment Configuration
+## 🔄 Environment-Specific Configuration
 
-### Environment Variables
-
-Create environment files for different stages:
-
-#### .env.production
+### Development
 
 ```bash
-# Production environment
-REACT_APP_ENV=production
-REACT_APP_API_URL=https://api.yourdomain.com
-REACT_APP_ANALYTICS_ID=your-analytics-id
-REACT_APP_SENTRY_DSN=your-sentry-dsn
+# Use local environment variables
+cp .env.example .env.local
+
+# Start development server
+npm run dev
 ```
 
-#### .env.staging
+### Staging
+
+Staging environment should use a separate Supabase project or schema to prevent data corruption in production.
 
 ```bash
-# Staging environment
-REACT_APP_ENV=staging
-REACT_APP_API_URL=https://staging-api.yourdomain.com
-REACT_APP_ANALYTICS_ID=staging-analytics-id
+# Environment variables for staging
+VITE_SUPABASE_URL=https://staging-project.supabase.co
+VITE_SUPABASE_ANON_KEY=staging_anon_key
 ```
 
-### Build Scripts for Different Environments
+### Production
 
-```json
-{
-    "scripts": {
-        "build:production": "REACT_APP_ENV=production npm run build",
-        "build:staging": "REACT_APP_ENV=staging npm run build",
-        "build:development": "REACT_APP_ENV=development npm run build"
-    }
-}
+Production deployments should use secure environment variable configuration and proper database schema management.
+
+```bash
+# Environment variables for production
+VITE_SUPABASE_URL=https://htykqrmczqockvmrsfui.supabase.co
+VITE_SUPABASE_ANON_KEY=production_anon_key
 ```
 
 ## 🔒 Security Configuration

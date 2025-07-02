@@ -260,6 +260,21 @@ Annual Recurring Revenue (ARR) = MRR × 12
 -   Optimize marketing spend for best ROAS
 -   Consider revenue diversification strategies
 
+## 🔄 DevEx Rate Source & Calculation
+
+Starting **2024-07-02**, the DevEx (Developer Exchange) rate is pulled automatically from the official Roblox _Exchange Robux for Real Money_ FAQ every 24 hours by a Supabase Edge Function (`scrapeDevexRate`).
+
+### How we calculate the rate
+
+1. The function downloads the FAQ HTML and extracts the USD amount for **100 000 Robux** (e.g. `$350.00`).
+2. The value is divided by `100 000` to yield the USD-per-Robux rate.
+3. A new record is stored in the `public.devex_rates` table with the source URL and timestamp.
+4. All financial metrics that rely on currency conversion pick the **latest** rate via the `/api/devex/latest` endpoint (10 min cache).
+
+If the scrape fails, the system safely falls back to the historical average of **$0.0035 / Robux** until the next successful run.
+
+> ℹ️ Historical rate snapshots allow retro-active financial calculations to stay accurate even when Roblox changes the payout value.
+
 ---
 
 This metrics guide helps you make data-driven decisions for your Roblox game development studio. For specific implementation questions, refer to our [technical documentation](../ARCHITECTURE.md).

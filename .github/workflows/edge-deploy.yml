@@ -1,0 +1,28 @@
+name: Deploy Supabase Edge Functions
+
+on:
+    push:
+        branches: [main]
+        paths:
+            - 'supabase/functions/scrapeDevexRate/**'
+            - '.github/workflows/edge-deploy.yml'
+
+jobs:
+    deploy-edge:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '20.x'
+                  cache: 'npm'
+
+            - name: Install Supabase CLI
+              run: npm install -g supabase@latest --silent
+
+            - name: Deploy Edge Function
+              run: supabase functions deploy scrapeDevexRate --project-ref ${{ secrets.VITE_SUPABASE_URL }}
+              env:
+                  SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}

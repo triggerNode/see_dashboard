@@ -5,6 +5,17 @@ All notable changes to the {s}ee Dashboard project will be documented in this fi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.3] - 2024-07-02
+
+### Added
+
+-   **Live DevEx Rate Support**: Automatic daily scrape of Roblox official FAQ via Supabase Edge Function (`scrapeDevexRate`).
+-   **`public.devex_rates` table**: Stores historical rate snapshots for accurate back-calculations.
+-   **API endpoint `/api/devex/latest`**: Serves the latest rate with 10-minute in-memory cache.
+-   **React Hook `useDevexRate`** & **`EffectiveTakeHome` widget**: Surface the most up-to-date take-home rate in dashboards.
+-   **CI Edge Deploy Workflow**: Automated deployment of the edge function on main branch push.
+-   **Tests & Documentation**: Parser unit test, integration test for API route, metric documentation, and architecture diagram update.
+
 ## [1.3.2] - 2024-12-19
 
 ### 🎮 Major Features Added

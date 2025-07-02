@@ -31,6 +31,9 @@ This document provides a comprehensive overview of the {s}ee Dashboard architect
 ├─────────────────────────────────────────┤
 │           Build & Tooling               │
 │      Vite + ESLint + Prettier          │
+├─────────────────────────────────────────┤
+│           Backend Service               │
+│              Supabase                  │
 └─────────────────────────────────────────┘
 ```
 
@@ -154,7 +157,7 @@ The `metric_map.json` file defines how UI components map to business calculation
                             ▼
                   ┌─────────────────┐
                   │  Data Pipeline  │
-                  │  (Mock System)  │
+                  │  (Mock/Supabase)│
                   └─────────────────┘
                             │
                             ▼
@@ -170,9 +173,13 @@ The `metric_map.json` file defines how UI components map to business calculation
                   └─────────────────┘
 ```
 
-### Mock Data System
+### Dual-Mode Data System
 
-Currently, {s}ee uses a sophisticated mock data system that simulates real Roblox analytics:
+{s}ee implements a dual-mode data system that allows seamless switching between mock data and real data:
+
+#### Mock Data System
+
+For rapid development and testing without backend dependencies:
 
 ```typescript
 // src/mock/data/dashboardData.ts
@@ -185,6 +192,31 @@ export const mockFinancialData = {
         usdCosts: 200, // External costs
     }),
     // ... additional mock data
+}
+```
+
+#### Supabase Integration
+
+For production use with real data persistence:
+
+```typescript
+// src/lib/supabaseClient.ts
+import { createClient } from '@supabase/supabase-js'
+
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
+const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY
+
+export const supabase = createClient(supabaseUrl, supabaseKey)
+
+// Example usage
+export const fetchFinancialData = async (projectId: string) => {
+    const { data, error } = await supabase
+        .from('financial_metrics')
+        .select('*')
+        .eq('project_id', projectId)
+
+    if (error) throw error
+    return data
 }
 ```
 
@@ -499,6 +531,90 @@ class RobloxDashboardService {
 3. **Progressive Web App**: Offline capabilities and mobile app feel
 4. **Edge Computing**: CDN-based data processing for global performance
 5. **Machine Learning Integration**: Predictive analytics for game performance
+
+## 🔄 Backend Integration
+
+### Supabase Architecture
+
+{s}ee utilizes Supabase as its Backend-as-a-Service (BaaS) solution:
+
+```
+┌───────────────────────────────────┐
+│           {s}ee Frontend          │
+└─────────────────┬─────────────────┘
+                  │
+                  ▼
+┌───────────────────────────────────┐
+│         Supabase Client           │
+└─────────────────┬─────────────────┘
+                  │
+                  ▼
+┌───────────────────────────────────┐
+│         Supabase Backend          │
+├─────────────┬───────────┬─────────┤
+│  PostgreSQL │   Auth    │ Storage │
+└─────────────┴───────────┴─────────┘
+```
+
+### Key Supabase Components
+
+1. **Authentication**:
+
+    - JWT-based authentication
+    - Role-based access control for team members
+    - Session management
+
+2. **Database**:
+
+    - PostgreSQL with Row-Level Security (RLS)
+    - Structured tables for:
+        - Financial metrics
+        - Project management data
+        - User profiles and teams
+
+3. **Realtime**:
+
+    - Live dashboard updates
+    - Realtime collaboration features
+    - Notification system
+
+4. **Storage**:
+    - Game assets
+    - Documentation files
+    - Media attachments
+
+### Environment Configuration
+
+The application uses environment variables for configuration:
+
+```
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your-anon-key
+```
+
+### DevEx Rate Ingestion (2024-07-02)
+
+```
+        ┌───────────────┐          daily cron (03:00 UTC)
+        │ Supabase Edge │◀───────────────────────────────┐
+        │ Function      │  scrapeDevexRate               │
+        └──────┬────────┘                                  │
+               │ fetch FAQ                                 │
+               ▼                                           │
+    https://en.help.roblox.com/...                         │
+               │                                           │
+               ▼                                           │
+┌───────────────────────────┐                              │
+│   public.devex_rates      │                              │
+│   (timestamped snapshots) │                              │
+└───────────────────────────┘                              │
+               │                                           │
+               ▼                                           │
+           `/api/devex/latest` (10 min cache) ─────────────┘
+               │
+               ▼
+        React Hook `useDevexRate` ➜ UI Widgets
+```
 
 ---
 
