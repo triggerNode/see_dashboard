@@ -68,12 +68,14 @@ const Metrics = ({ data, selectedPeriod }: MetricsProps) => {
     return (
         <div className="flex flex-col 2xl:flex-col xl:flex-row gap-4">
             <Widget
-                title="Visitor"
+                title="ARPDAU (USD)"
                 value={
                     <NumericFormat
                         displayType="text"
                         value={data.visitors.value}
-                        thousandSeparator={true}
+                        prefix="$"
+                        decimalScale={2}
+                        fixedDecimalScale={true}
                     />
                 }
                 growShrink={data.visitors.growShrink}
@@ -82,7 +84,7 @@ const Metrics = ({ data, selectedPeriod }: MetricsProps) => {
                 iconClass="bg-orange-200"
             />
             <Widget
-                title="Conversion rate"
+                title="Payer Conversion (%)"
                 value={`${data.conversionRate.value}%`}
                 growShrink={data.conversionRate.growShrink}
                 compareFrom={vsPeriod[selectedPeriod]}
@@ -90,11 +92,12 @@ const Metrics = ({ data, selectedPeriod }: MetricsProps) => {
                 iconClass="bg-emerald-200"
             />
             <Widget
-                title="Ad campaign clicks"
+                title="Est. Monthly DevEx"
                 value={
                     <NumericFormat
                         displayType="text"
                         value={data.adCampaignClicks.value}
+                        prefix="$"
                         thousandSeparator={true}
                     />
                 }

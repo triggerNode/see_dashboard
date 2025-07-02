@@ -32,7 +32,7 @@ const WebAnalytic = ({ data }: WebAnalyticProps) => {
     return (
         <Card className="h-full">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <h4>Web analytic</h4>
+                <h4>Net Profit (USD) vs. Premium Playtime</h4>
                 <div className="inline-flex items-center gap-6">
                     <div className="flex items-center gap-1.5">
                         <div
@@ -60,7 +60,7 @@ const WebAnalytic = ({ data }: WebAnalyticProps) => {
             <div className="mt-8">
                 <div className="flex items-center gap-10">
                     <div>
-                        <div className="mb-2">Page views</div>
+                        <div className="mb-2">Net Profit (USD)</div>
                         <div className="flex items-end gap-2">
                             <h3>
                                 <NumericFormat
@@ -80,7 +80,7 @@ const WebAnalytic = ({ data }: WebAnalyticProps) => {
                         </div>
                     </div>
                     <div>
-                        <div className="mb-2">Avg. Time on page</div>
+                        <div className="mb-2">Avg. Premium Playtime</div>
                         <div className="flex items-end gap-2">
                             <h3>{data.avgTimeOnPage.value}</h3>
                             <GrowShrinkValue

@@ -43,7 +43,7 @@ const TaskOverview = ({ data }: TaskOverviewProps) => {
     return (
         <Card>
             <div className="flex sm:flex-row flex-col md:items-center justify-between mb-6 gap-4">
-                <h4>Task overview</h4>
+                <h4>Developer Cost Breakdown</h4>
                 <Segment
                     value={timeRange}
                     size="sm"

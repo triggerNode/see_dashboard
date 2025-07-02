@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import Avatar from '@/components/ui/Avatar'
 import Card from '@/components/ui/Card'
-import Progress from '@/components/ui/Progress'
 import RegionMap from '@/components/shared/RegionMap'
 import classNames from '@/utils/classNames'
+import { NumericFormat } from 'react-number-format'
 import type { CustomerDemographicData } from '../types'
 
 type CustomerDemographicProps = {
@@ -31,7 +31,7 @@ const CustomerDemographic = ({ data }: CustomerDemographicProps) => {
 
     return (
         <Card>
-            <h4>Top countries</h4>
+            <h4>Profitability by Region</h4>
             <div className="flex flex-col xl:flex-row items-center gap-4 mt-4">
                 <div className="px-4 flex flex-col justify-center flex-1 w-full">
                     <RegionMap
@@ -93,14 +93,30 @@ const CustomerDemographic = ({ data }: CustomerDemographicProps) => {
                                 <div className="heading-text font-semibold">
                                     {item.name}
                                 </div>
-                                <Progress
-                                    percent={item.value}
-                                    trailClass={classNames(
-                                        'transition-colors duration-150',
-                                        hovering === item.id &&
-                                            'bg-gray-200 dark:bg-gray-600',
-                                    )}
-                                />
+                                <div className="flex justify-between mt-1">
+                                    <div className="text-sm text-gray-600 dark:text-gray-400">
+                                        Net Profit:{' '}
+                                        <NumericFormat
+                                            displayType="text"
+                                            value={item.value * 100}
+                                            prefix="$"
+                                            thousandSeparator={true}
+                                            decimalScale={0}
+                                            fixedDecimalScale={true}
+                                        />
+                                    </div>
+                                    <div className="text-sm text-gray-600 dark:text-gray-400">
+                                        ARPU:{' '}
+                                        <NumericFormat
+                                            displayType="text"
+                                            value={item.value * 50}
+                                            prefix="$"
+                                            thousandSeparator={true}
+                                            decimalScale={0}
+                                            fixedDecimalScale={true}
+                                        />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     ))}

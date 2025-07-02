@@ -1,0 +1,278 @@
+[
+    {
+        "page": "/dashboards/ecommerce",
+        "componentType": "Chart",
+        "selector": "Overview",
+        "humanLabel": "Sales overview line chart with period filtering"
+    },
+    {
+        "page": "/dashboards/ecommerce",
+        "componentType": "Widget",
+        "selector": "StatisticCard",
+        "humanLabel": "KPI statistic cards for profit, orders, and impressions"
+    },
+    {
+        "page": "/dashboards/ecommerce",
+        "componentType": "Chart",
+        "selector": "CustomerDemographic",
+        "humanLabel": "Geographic customer distribution map"
+    },
+    {
+        "page": "/dashboards/ecommerce",
+        "componentType": "Table",
+        "selector": "RecentOrder",
+        "humanLabel": "Recent orders data table with pagination"
+    },
+    {
+        "page": "/dashboards/ecommerce",
+        "componentType": "Widget",
+        "selector": "SalesTarget",
+        "humanLabel": "Sales target progress widget"
+    },
+    {
+        "page": "/dashboards/ecommerce",
+        "componentType": "Widget",
+        "selector": "TopProduct",
+        "humanLabel": "Top selling products list widget"
+    },
+    {
+        "page": "/dashboards/ecommerce",
+        "componentType": "Chart",
+        "selector": "RevenueByChannel",
+        "humanLabel": "Revenue breakdown by channel pie chart"
+    },
+    {
+        "page": "/dashboards/analytic",
+        "componentType": "Chart",
+        "selector": "WebAnalytic",
+        "humanLabel": "Web analytics line chart with multiple series"
+    },
+    {
+        "page": "/dashboards/analytic",
+        "componentType": "Widget",
+        "selector": "Metrics",
+        "humanLabel": "Key metric widgets for visitors, conversion rate, and clicks"
+    },
+    {
+        "page": "/dashboards/analytic",
+        "componentType": "Table",
+        "selector": "TopPerformingPages",
+        "humanLabel": "Top performing pages data table with export"
+    },
+    {
+        "page": "/dashboards/analytic",
+        "componentType": "Chart",
+        "selector": "DeviceSession",
+        "humanLabel": "Device session distribution donut chart"
+    },
+    {
+        "page": "/dashboards/analytic",
+        "componentType": "Chart",
+        "selector": "TopChannel",
+        "humanLabel": "Top traffic channels chart"
+    },
+    {
+        "page": "/dashboards/analytic",
+        "componentType": "Chart",
+        "selector": "Traffic",
+        "humanLabel": "Traffic analytics chart"
+    },
+    {
+        "page": "/dashboards/project",
+        "componentType": "Chart",
+        "selector": "TaskOverview",
+        "humanLabel": "Task overview bar chart with time period filtering"
+    },
+    {
+        "page": "/dashboards/project",
+        "componentType": "Widget",
+        "selector": "ProjectOverview",
+        "humanLabel": "Project overview statistics widget"
+    },
+    {
+        "page": "/dashboards/project",
+        "componentType": "Widget",
+        "selector": "Schedule",
+        "humanLabel": "Project schedule calendar widget"
+    },
+    {
+        "page": "/dashboards/project",
+        "componentType": "Widget",
+        "selector": "UpcomingSchedule",
+        "humanLabel": "Upcoming schedule list widget"
+    },
+    {
+        "page": "/dashboards/project",
+        "componentType": "Widget",
+        "selector": "CurrentTasks",
+        "humanLabel": "Current tasks list widget"
+    },
+    {
+        "page": "/dashboards/project",
+        "componentType": "Widget",
+        "selector": "RecentActivity",
+        "humanLabel": "Recent activity feed widget"
+    },
+    {
+        "page": "/dashboards/marketing",
+        "componentType": "Widget",
+        "selector": "KpiSummary",
+        "humanLabel": "Marketing KPI summary cards"
+    },
+    {
+        "page": "/dashboards/marketing",
+        "componentType": "Chart",
+        "selector": "AdsPerformance",
+        "humanLabel": "Ads performance chart with metrics"
+    },
+    {
+        "page": "/dashboards/marketing",
+        "componentType": "Chart",
+        "selector": "LeadPerformance",
+        "humanLabel": "Lead performance radar chart"
+    },
+    {
+        "page": "/dashboards/marketing",
+        "componentType": "Table",
+        "selector": "RecentCampaign",
+        "humanLabel": "Recent marketing campaigns data table"
+    },
+    {
+        "page": "/concepts/customers/customer-list",
+        "componentType": "Table",
+        "selector": "CustomerListTable",
+        "humanLabel": "Customer list data table with filtering, sorting, and selection"
+    },
+    {
+        "page": "/concepts/customers/customer-edit/1",
+        "componentType": "Form",
+        "selector": "CustomerForm",
+        "humanLabel": "Customer edit form with validation and file upload"
+    },
+    {
+        "page": "/concepts/customers/customer-create",
+        "componentType": "Form",
+        "selector": "CustomerForm",
+        "humanLabel": "Customer creation form with validation"
+    },
+    {
+        "page": "/concepts/products/product-list",
+        "componentType": "Table",
+        "selector": "ProductListTable",
+        "humanLabel": "Product list data table with bulk operations"
+    },
+    {
+        "page": "/concepts/products/product-edit/12",
+        "componentType": "Form",
+        "selector": "ProductForm",
+        "humanLabel": "Product edit form with image upload and pricing"
+    },
+    {
+        "page": "/concepts/products/product-create",
+        "componentType": "Form",
+        "selector": "ProductForm",
+        "humanLabel": "Product creation form with attributes and media"
+    },
+    {
+        "page": "/concepts/orders/order-list",
+        "componentType": "Table",
+        "selector": "OrderListTable",
+        "humanLabel": "Order list data table with status filtering"
+    },
+    {
+        "page": "/concepts/account/roles-permissions",
+        "componentType": "Table",
+        "selector": "RolesPermissionsUserTable",
+        "humanLabel": "User roles and permissions management table"
+    },
+    {
+        "page": "/concepts/help-center/manage-article",
+        "componentType": "Table",
+        "selector": "ArticleListTable",
+        "humanLabel": "Article management data table with bulk operations"
+    },
+    {
+        "page": "/ui-components/table",
+        "componentType": "Table",
+        "selector": "Simple",
+        "humanLabel": "Basic table component demonstration"
+    },
+    {
+        "page": "/ui-components/table",
+        "componentType": "Table",
+        "selector": "PaginationTable",
+        "humanLabel": "Table with pagination and page size selection"
+    },
+    {
+        "page": "/ui-components/table",
+        "componentType": "Table",
+        "selector": "Sorting",
+        "humanLabel": "Table with column sorting functionality"
+    },
+    {
+        "page": "/ui-components/table",
+        "componentType": "Table",
+        "selector": "Filtering",
+        "humanLabel": "Table with filtering capabilities"
+    },
+    {
+        "page": "/ui-components/graph/charts",
+        "componentType": "Chart",
+        "selector": "BasicLine",
+        "humanLabel": "Basic line chart example"
+    },
+    {
+        "page": "/ui-components/graph/charts",
+        "componentType": "Chart",
+        "selector": "DashedLine",
+        "humanLabel": "Dashed line chart with multiple series"
+    },
+    {
+        "page": "/ui-components/graph/charts",
+        "componentType": "Chart",
+        "selector": "BasicArea",
+        "humanLabel": "Basic area chart example"
+    },
+    {
+        "page": "/ui-components/graph/charts",
+        "componentType": "Chart",
+        "selector": "BasicColumn",
+        "humanLabel": "Basic column chart example"
+    },
+    {
+        "page": "/ui-components/graph/charts",
+        "componentType": "Chart",
+        "selector": "SimplePie",
+        "humanLabel": "Simple pie chart visualization"
+    },
+    {
+        "page": "/ui-components/graph/charts",
+        "componentType": "Chart",
+        "selector": "SimpleDonut",
+        "humanLabel": "Simple donut chart visualization"
+    },
+    {
+        "page": "/ui-components/form-control",
+        "componentType": "Form",
+        "selector": "Basic",
+        "humanLabel": "Basic form with validation using react-hook-form"
+    },
+    {
+        "page": "/ui-components/form-control",
+        "componentType": "Form",
+        "selector": "Layout",
+        "humanLabel": "Form layout examples (horizontal, vertical, inline)"
+    },
+    {
+        "page": "/ui-components/form-control",
+        "componentType": "Form",
+        "selector": "FieldValidation",
+        "humanLabel": "Form with field-level validation"
+    },
+    {
+        "page": "/ui-components/form-control",
+        "componentType": "Form",
+        "selector": "SchemaValidation",
+        "humanLabel": "Form with Zod schema validation"
+    }
+]

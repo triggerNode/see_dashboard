@@ -69,7 +69,7 @@ const RevenueByChannel = ({ data }: RevenueByChannelProps) => {
     return (
         <Card>
             <div className="flex items-center justify-between mb-4">
-                <h4>Channel revenue</h4>
+                <h4>Revenue Source Breakdown</h4>
                 <Select
                     className="w-[120px]"
                     size="sm"
@@ -113,7 +113,7 @@ const RevenueByChannel = ({ data }: RevenueByChannelProps) => {
                 <div className="grid grid-cols-3">
                     <DisplayColumn
                         icon={<TbShoppingCart />}
-                        label="Online store"
+                        label="Developer Products"
                         value={
                             data[selectedPeriod].value /
                             data[selectedPeriod].percentage.onlineStore
@@ -122,7 +122,7 @@ const RevenueByChannel = ({ data }: RevenueByChannelProps) => {
                     />
                     <DisplayColumn
                         icon={<TbBuildingStore />}
-                        label="Physical store"
+                        label="Game Passes"
                         value={
                             data[selectedPeriod].value /
                             data[selectedPeriod].percentage.physicalStore
@@ -131,7 +131,7 @@ const RevenueByChannel = ({ data }: RevenueByChannelProps) => {
                     />
                     <DisplayColumn
                         icon={<TbDeviceMobileMessage />}
-                        label="Social Media"
+                        label="Premium Payouts"
                         value={
                             data[selectedPeriod].value /
                             data[selectedPeriod].percentage.socialMedia

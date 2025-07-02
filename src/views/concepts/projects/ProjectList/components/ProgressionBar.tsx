@@ -1,24 +1,32 @@
 import { useMemo } from 'react'
-import Progress from '@/components/ui/Progress'
 
 type ProgressionBarProps = {
     progression: number
 }
 
 const ProgressionBar = ({ progression }: ProgressionBarProps) => {
-    const progressExtraProps = useMemo(() => {
-        if (progression > 70) {
-            return { customColorClass: 'bg-success' }
-        }
-
-        if (progression < 40) {
-            return { customColorClass: 'bg-error' }
-        }
-
-        return { customColorClass: 'bg-amber-400' }
+    const profitMargin = useMemo(() => {
+        // Convert progression to a profit margin percentage for display
+        return Math.round(progression * 0.35) // Example: 80% progression = 28% profit margin
     }, [progression])
 
-    return <Progress size="sm" percent={progression} {...progressExtraProps} />
+    const colorClass = useMemo(() => {
+        if (profitMargin > 25) {
+            return 'text-success'
+        }
+
+        if (profitMargin < 15) {
+            return 'text-error'
+        }
+
+        return 'text-amber-600'
+    }, [profitMargin])
+
+    return (
+        <div className={`text-sm font-semibold ${colorClass}`}>
+            Profit Margin: {profitMargin}%
+        </div>
+    )
 }
 
 export default ProgressionBar

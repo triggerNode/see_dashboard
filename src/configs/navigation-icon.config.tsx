@@ -186,6 +186,7 @@ const navigationIcon: NavigationIcons = {
     otpVerification: <PiPasswordDuotone />,
     dashboard: <PiSpeedometerDuotone />,
     dashboardEcommerce: <PiShoppingCartSimpleDuotone />,
+    dashboardOverview: <PiGridFourDuotone />,
     dashboardProject: <PiRocketDuotone />,
     dashboardAnalytic: <PiChartBarDuotone />,
     dashboardMarketing: <PiMegaphoneDuotone />,

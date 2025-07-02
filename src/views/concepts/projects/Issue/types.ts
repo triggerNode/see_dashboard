@@ -42,6 +42,8 @@ export type IssueDetail = {
     dueDate?: number
     status?: string
     priority?: string
+    hoursLogged?: number
+    costImpact?: string
     assignees: {
         id: string
         name: string

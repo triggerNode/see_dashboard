@@ -3,9 +3,10 @@
         "dashboard": {
             "dashboard": "Dashboard",
             "ecommerce": "Ecommerce",
-            "analytic": "Analytic",
+            "overview": "Overview",
+            "analytic": "Financial Intel",
             "project": "Project",
-            "marketing": "Marketing"
+            "marketing": "LiveOps"
         },
         "concepts": "Concepts",
         "conceptsAi": {
@@ -29,6 +30,14 @@
         },
         "conceptsProjects": {
             "projects": "Projects",
+            "studio": "Studio",
+            "studioDesc": "Manage and track your game studio",
+            "devBoard": "Dev Board",
+            "devBoardDesc": "Manage your development workflow",
+            "gamePortfolio": "Game Portfolio",
+            "gamePortfolioDesc": "Organize all your games",
+            "projectTicket": "Ticket",
+            "projectTicketDesc": "Resolve development tickets",
             "projectList": "List",
             "projectDetails": "Details",
             "projectTasks": "Tasks",

@@ -12,7 +12,7 @@ const LeadPerformance = ({ data }: LeadPerformanceProps) => {
     return (
         <Card>
             <div className="flex items-center justify-between">
-                <h4>Lead performance score</h4>
+                <h4>Discord Community Score</h4>
             </div>
             <div className="mt-6">
                 <Chart

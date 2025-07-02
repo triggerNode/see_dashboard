@@ -5,6 +5,7 @@ import GrowShrinkValue from '@/components/shared/GrowShrinkValue'
 import classNames from '@/utils/classNames'
 import isLastChild from '@/utils/isLastChild'
 import { useNavigate } from 'react-router'
+import { NumericFormat } from 'react-number-format'
 import type { Product } from '../types'
 
 type TopProductProps = {
@@ -21,7 +22,7 @@ const TopProduct = ({ data }: TopProductProps) => {
     return (
         <Card>
             <div className="flex items-center justify-between">
-                <h4>Top product</h4>
+                <h4>Item Profitability Ledger</h4>
                 <Button size="sm" onClick={handleViewAll}>
                     View all
                 </Button>
@@ -46,13 +47,25 @@ const TopProduct = ({ data }: TopProductProps) => {
                                 <div className="heading-text font-bold">
                                     {product.name}
                                 </div>
-                                <div>Sold: {product.sales}</div>
+                                <div className="text-sm text-gray-500">
+                                    Net Profit:
+                                    <NumericFormat
+                                        displayType="text"
+                                        value={product.netProfit}
+                                        prefix="$"
+                                        thousandSeparator={true}
+                                        className="ml-1 font-semibold"
+                                    />
+                                </div>
                             </div>
                         </div>
-                        <div className="flex items-center gap-2">
+                        <div className="flex flex-col items-end gap-1">
+                            <div className="text-sm font-bold">
+                                ROI: {product.roi.toFixed(1)}%
+                            </div>
                             <GrowShrinkValue
-                                className="rounded-lg py-0.5 px-2 font-bold"
-                                value={product.growShrink}
+                                className="rounded-lg py-0.5 px-2 font-bold text-xs"
+                                value={product.roi}
                                 positiveClass="bg-success-subtle"
                                 negativeClass="bg-error-subtle"
                                 suffix="%"

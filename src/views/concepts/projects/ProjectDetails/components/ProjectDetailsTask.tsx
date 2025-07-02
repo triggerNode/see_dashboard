@@ -13,7 +13,7 @@ import type { GetProjectDetailsTaskResponse, Task } from '../types'
 const ordered = ['To Do', 'In Progress', 'To Review', 'Completed']
 
 const taskLabelColors: Record<string, string> = {
-    'Live issue': 'bg-rose-100 dark:bg-rose-100 dark:text-gray-900',
+    'Player-Facing': 'bg-rose-100 dark:bg-rose-100 dark:text-gray-900',
     Task: 'bg-blue-100 dark:bg-blue-100 dark:text-gray-900',
     Bug: 'bg-amber-100 dark:bg-amber-100 dark:text-gray-900',
     'Low priority': 'bg-purple-100 dark:bg-purple-100 dark:text-gray-900',

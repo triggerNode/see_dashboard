@@ -17,9 +17,9 @@ const TopChannel = ({ data }: TopChannelProps) => {
     return (
         <Card>
             <div className="flex items-center justify-between">
-                <h4>Top channel</h4>
+                <h4>Player Acquisition Channels</h4>
                 <CSVLink
-                    filename="top-channel.csv"
+                    filename="player-acquisition-channels.csv"
                     data={data.channels.map((channel) => {
                         return {
                             Channel: channel.name,
@@ -32,7 +32,7 @@ const TopChannel = ({ data }: TopChannelProps) => {
                 </CSVLink>
             </div>
             <div className="mt-5">
-                <div className="mb-2">Visitors</div>
+                <div className="mb-2">New Players</div>
                 <div className="flex items-end gap-2 mb-1">
                     <h3>
                         <NumericFormat

@@ -12,11 +12,8 @@ const HeroContent = ({ mode }: { mode: Mode }) => {
         navigate('/dashboards/ecommerce')
     }
 
-    const handleGetTemplate = () => {
-        window.open(
-            'https://themeforest.net/item/ecme-the-ultimate-react-tailwind-admin-template/54470284',
-            '_blank',
-        )
+    const handlePurchase = () => {
+        navigate('/dashboards/ecommerce')
     }
 
     return (
@@ -58,7 +55,7 @@ const HeroContent = ({ mode }: { mode: Mode }) => {
                         <Button variant="solid" onClick={handlePreview}>
                             Preview
                         </Button>
-                        <Button onClick={handleGetTemplate}>
+                        <Button onClick={handlePurchase}>
                             Get this template
                         </Button>
                     </motion.div>
@@ -72,7 +69,7 @@ const HeroContent = ({ mode }: { mode: Mode }) => {
                                 src="/img/landing/hero/hero.webp"
                                 width={1920}
                                 height={1040}
-                                alt="Ecme homepage"
+                                alt="{s}ee homepage"
                             />
                         )}
                         {mode === MODE_DARK && (
@@ -81,7 +78,7 @@ const HeroContent = ({ mode }: { mode: Mode }) => {
                                 src="/img/landing/hero/hero-dark.webp"
                                 width={1920}
                                 height={1040}
-                                alt="Ecme homepage"
+                                alt="{s}ee homepage"
                             />
                         )}
                     </div>

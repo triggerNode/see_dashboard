@@ -51,7 +51,7 @@ const ProjectOverview = ({ data }: ProjectOverview) => {
     return (
         <Card>
             <div className="flex items-center justify-between">
-                <h4>Overview</h4>
+                <h4>Projected Monthly Burn Rate</h4>
                 <Link to="/concepts/projects/project-list">
                     <Button asElement="div" size="sm">
                         All projects

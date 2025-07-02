@@ -1,0 +1,467 @@
+[
+    {
+        "path": "/dashboards/ecommerce",
+        "menuLabel": "Ecommerce",
+        "icon": "dashboardEcommerce"
+    },
+    {
+        "path": "/dashboards/project",
+        "menuLabel": "Project",
+        "icon": "dashboardProject"
+    },
+    {
+        "path": "/dashboards/marketing",
+        "menuLabel": "Marketing",
+        "icon": "dashboardMarketing"
+    },
+    {
+        "path": "/dashboards/analytic",
+        "menuLabel": "Analytic",
+        "icon": "dashboardAnalytic"
+    },
+    {
+        "path": "/concepts/ai/chat",
+        "menuLabel": "AI Chat",
+        "icon": "aiChat"
+    },
+    {
+        "path": "/concepts/ai/image",
+        "menuLabel": "AI Image",
+        "icon": "aiImage"
+    },
+    {
+        "path": "/concepts/projects/scrum-board",
+        "menuLabel": "Scrum Board",
+        "icon": "projectScrumBoard"
+    },
+    {
+        "path": "/concepts/projects/project-list",
+        "menuLabel": "Project List",
+        "icon": "projectList"
+    },
+    {
+        "path": "/concepts/projects/project-details/27",
+        "menuLabel": "Project Details",
+        "icon": "projectDetails"
+    },
+    {
+        "path": "/concepts/projects/tasks",
+        "menuLabel": "Project Tasks",
+        "icon": "projectTask"
+    },
+    {
+        "path": "/concepts/projects/tasks/1",
+        "menuLabel": "Project Issue",
+        "icon": "projectIssue"
+    },
+    {
+        "path": "/concepts/customers/customer-list",
+        "menuLabel": "Customer List",
+        "icon": "customerList"
+    },
+    {
+        "path": "/concepts/customers/customer-edit/1",
+        "menuLabel": "Customer Edit",
+        "icon": "customerEdit"
+    },
+    {
+        "path": "/concepts/customers/customer-create",
+        "menuLabel": "Customer Create",
+        "icon": "customerCreate"
+    },
+    {
+        "path": "/concepts/customers/customer-details/1",
+        "menuLabel": "Customer Details",
+        "icon": "customerDetails"
+    },
+    {
+        "path": "/concepts/products/product-list",
+        "menuLabel": "Product List",
+        "icon": "productList"
+    },
+    {
+        "path": "/concepts/products/product-edit/12",
+        "menuLabel": "Product Edit",
+        "icon": "productEdit"
+    },
+    {
+        "path": "/concepts/products/product-create",
+        "menuLabel": "Product Create",
+        "icon": "productCreate"
+    },
+    {
+        "path": "/concepts/orders/order-list",
+        "menuLabel": "Order List",
+        "icon": "orderList"
+    },
+    {
+        "path": "/concepts/orders/order-edit/95954",
+        "menuLabel": "Order Edit",
+        "icon": "orderEdit"
+    },
+    {
+        "path": "/concepts/orders/order-create",
+        "menuLabel": "Order Create",
+        "icon": "orderCreate"
+    },
+    {
+        "path": "/concepts/orders/order-details/95954",
+        "menuLabel": "Order Details",
+        "icon": "orderDetails"
+    },
+    {
+        "path": "/concepts/account/settings",
+        "menuLabel": "Account Settings",
+        "icon": "accountSettings"
+    },
+    {
+        "path": "/concepts/account/activity-log",
+        "menuLabel": "Activity Log",
+        "icon": "activityLog"
+    },
+    {
+        "path": "/concepts/account/roles-permissions",
+        "menuLabel": "Roles & Permissions",
+        "icon": "rolesPermissions"
+    },
+    {
+        "path": "/concepts/account/pricing",
+        "menuLabel": "Pricing",
+        "icon": "pricing"
+    },
+    {
+        "path": "/concepts/help-center/support-hub",
+        "menuLabel": "Support Hub",
+        "icon": "supportHub"
+    },
+    {
+        "path": "/concepts/help-center/article/pWBKE_0UiQ",
+        "menuLabel": "Article",
+        "icon": "article"
+    },
+    {
+        "path": "/concepts/help-center/edit-article/pWBKE_0UiQ",
+        "menuLabel": "Edit Article",
+        "icon": "editArticle"
+    },
+    {
+        "path": "/concepts/help-center/manage-article",
+        "menuLabel": "Manage Article",
+        "icon": "manageArticle"
+    },
+    {
+        "path": "/concepts/calendar",
+        "menuLabel": "Calendar",
+        "icon": "calendar"
+    },
+    {
+        "path": "/concepts/file-manager",
+        "menuLabel": "File Manager",
+        "icon": "fileManager"
+    },
+    {
+        "path": "/concepts/mail",
+        "menuLabel": "Mail",
+        "icon": "mail"
+    },
+    {
+        "path": "/concepts/chat",
+        "menuLabel": "Chat",
+        "icon": "chat"
+    },
+    {
+        "path": "/ui-components/button",
+        "menuLabel": "Button",
+        "icon": "uiCommonButton"
+    },
+    {
+        "path": "/ui-components/grid",
+        "menuLabel": "Grid",
+        "icon": "uiCommonGrid"
+    },
+    {
+        "path": "/ui-components/typography",
+        "menuLabel": "Typography",
+        "icon": "uiCommonTypography"
+    },
+    {
+        "path": "/ui-components/icons",
+        "menuLabel": "Icons",
+        "icon": "uiCommonIcons"
+    },
+    {
+        "path": "/ui-components/alert",
+        "menuLabel": "Alert",
+        "icon": "uiFeedbackAlert"
+    },
+    {
+        "path": "/ui-components/dialog",
+        "menuLabel": "Dialog",
+        "icon": "uiFeedbackDialog"
+    },
+    {
+        "path": "/ui-components/drawer",
+        "menuLabel": "Drawer",
+        "icon": "uiFeedbackDrawer"
+    },
+    {
+        "path": "/ui-components/progress",
+        "menuLabel": "Progress",
+        "icon": "uiFeedbackProgress"
+    },
+    {
+        "path": "/ui-components/skeleton",
+        "menuLabel": "Skeleton",
+        "icon": "uiFeedbackSkeleton"
+    },
+    {
+        "path": "/ui-components/spinner",
+        "menuLabel": "Spinner",
+        "icon": "uiFeedbackSpinner"
+    },
+    {
+        "path": "/ui-components/toast",
+        "menuLabel": "Toast",
+        "icon": "uiFeedbackToast"
+    },
+    {
+        "path": "/ui-components/avatar",
+        "menuLabel": "Avatar",
+        "icon": "uiDataDisplayAvatar"
+    },
+    {
+        "path": "/ui-components/badge",
+        "menuLabel": "Badge",
+        "icon": "uiDataDisplayBadge"
+    },
+    {
+        "path": "/ui-components/calendar",
+        "menuLabel": "Calendar",
+        "icon": "uiDataDisplayCalendar"
+    },
+    {
+        "path": "/ui-components/cards",
+        "menuLabel": "Cards",
+        "icon": "uiDataDisplayCards"
+    },
+    {
+        "path": "/ui-components/table",
+        "menuLabel": "Table",
+        "icon": "uiDataDisplayTable"
+    },
+    {
+        "path": "/ui-components/tag",
+        "menuLabel": "Tag",
+        "icon": "uiDataDisplayTag"
+    },
+    {
+        "path": "/ui-components/timeline",
+        "menuLabel": "Timeline",
+        "icon": "uiDataDisplayTimeline"
+    },
+    {
+        "path": "/ui-components/tooltip",
+        "menuLabel": "Tooltip",
+        "icon": "uiDataDisplayTooltip"
+    },
+    {
+        "path": "/ui-components/checkbox",
+        "menuLabel": "Checkbox",
+        "icon": "uiDataEntryCheckbox"
+    },
+    {
+        "path": "/ui-components/date-picker",
+        "menuLabel": "Date Picker",
+        "icon": "uiDataEntryDatePicker"
+    },
+    {
+        "path": "/ui-components/form-control",
+        "menuLabel": "Form Control",
+        "icon": "uiDataEntryFormControl"
+    },
+    {
+        "path": "/ui-components/input",
+        "menuLabel": "Input",
+        "icon": "uiDataEntryInput"
+    },
+    {
+        "path": "/ui-components/input-group",
+        "menuLabel": "Input Group",
+        "icon": "uiDataEntryInputGroup"
+    },
+    {
+        "path": "/ui-components/radio",
+        "menuLabel": "Radio",
+        "icon": "uiDataEntryRadio"
+    },
+    {
+        "path": "/ui-components/segment",
+        "menuLabel": "Segment",
+        "icon": "uiDataEntrySegment"
+    },
+    {
+        "path": "/ui-components/select",
+        "menuLabel": "Select",
+        "icon": "uiDataEntrySelect"
+    },
+    {
+        "path": "/ui-components/slider",
+        "menuLabel": "Slider",
+        "icon": "uiDataEntrySlider"
+    },
+    {
+        "path": "/ui-components/switcher",
+        "menuLabel": "Switcher",
+        "icon": "uiDataEntrySwitcher"
+    },
+    {
+        "path": "/ui-components/time-input",
+        "menuLabel": "Time Input",
+        "icon": "uiDataEntryTimeInput"
+    },
+    {
+        "path": "/ui-components/upload",
+        "menuLabel": "Upload",
+        "icon": "uiDataEntryUpload"
+    },
+    {
+        "path": "/ui-components/dropdown",
+        "menuLabel": "Dropdown",
+        "icon": "uiNavigationDropdown"
+    },
+    {
+        "path": "/ui-components/menu",
+        "menuLabel": "Menu",
+        "icon": "uiNavigationMenu"
+    },
+    {
+        "path": "/ui-components/pagination",
+        "menuLabel": "Pagination",
+        "icon": "uiNavigationPagination"
+    },
+    {
+        "path": "/ui-components/steps",
+        "menuLabel": "Steps",
+        "icon": "uiNavigationSteps"
+    },
+    {
+        "path": "/ui-components/tabs",
+        "menuLabel": "Tabs",
+        "icon": "uiNavigationTabs"
+    },
+    {
+        "path": "/ui-components/graph/charts",
+        "menuLabel": "Charts",
+        "icon": "uiGraphCharts"
+    },
+    {
+        "path": "/ui-components/graph/maps",
+        "menuLabel": "Maps",
+        "icon": "uiGraphMaps"
+    },
+    {
+        "path": "/auth/sign-in-simple",
+        "menuLabel": "Sign In Simple",
+        "icon": ""
+    },
+    {
+        "path": "/auth/sign-in-side",
+        "menuLabel": "Sign In Side",
+        "icon": ""
+    },
+    {
+        "path": "/auth/sign-in-split",
+        "menuLabel": "Sign In Split",
+        "icon": ""
+    },
+    {
+        "path": "/auth/sign-up-simple",
+        "menuLabel": "Sign Up Simple",
+        "icon": ""
+    },
+    {
+        "path": "/auth/sign-up-side",
+        "menuLabel": "Sign Up Side",
+        "icon": ""
+    },
+    {
+        "path": "/auth/sign-up-split",
+        "menuLabel": "Sign Up Split",
+        "icon": ""
+    },
+    {
+        "path": "/auth/forgot-password-simple",
+        "menuLabel": "Forgot Password Simple",
+        "icon": ""
+    },
+    {
+        "path": "/auth/forgot-password-side",
+        "menuLabel": "Forgot Password Side",
+        "icon": ""
+    },
+    {
+        "path": "/auth/forgot-password-split",
+        "menuLabel": "Forgot Password Split",
+        "icon": ""
+    },
+    {
+        "path": "/auth/reset-password-simple",
+        "menuLabel": "Reset Password Simple",
+        "icon": ""
+    },
+    {
+        "path": "/auth/reset-password-side",
+        "menuLabel": "Reset Password Side",
+        "icon": ""
+    },
+    {
+        "path": "/auth/reset-password-split",
+        "menuLabel": "Reset Password Split",
+        "icon": ""
+    },
+    {
+        "path": "/auth/otp-verification-simple",
+        "menuLabel": "OTP Verification Simple",
+        "icon": ""
+    },
+    {
+        "path": "/auth/otp-verification-side",
+        "menuLabel": "OTP Verification Side",
+        "icon": ""
+    },
+    {
+        "path": "/auth/otp-verification-split",
+        "menuLabel": "OTP Verification Split",
+        "icon": ""
+    },
+    {
+        "path": "/access-denied",
+        "menuLabel": "Access Denied",
+        "icon": "accessDenied"
+    },
+    {
+        "path": "/landing",
+        "menuLabel": "Landing",
+        "icon": "landing"
+    },
+    {
+        "path": "/guide/documentation/introduction",
+        "menuLabel": "Documentation",
+        "icon": "documentation"
+    },
+    {
+        "path": "/guide/shared-component-doc/abbreviate-number",
+        "menuLabel": "Shared Component",
+        "icon": "sharedComponentDoc"
+    },
+    {
+        "path": "/guide/utils-doc/use-auth",
+        "menuLabel": "Utilities",
+        "icon": "utilsDoc"
+    },
+    {
+        "path": "/guide/changelog",
+        "menuLabel": "Changelog",
+        "icon": "changeLog"
+    }
+]

@@ -12,7 +12,7 @@ const DeviceSession = ({ data }: DeviceSessionProps) => {
     return (
         <Card>
             <div className="flex items-center justify-between">
-                <h4>Session devices</h4>
+                <h4>Revenue by Device</h4>
             </div>
             <div className="mt-6">
                 <Chart

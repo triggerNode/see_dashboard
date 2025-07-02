@@ -110,7 +110,7 @@ export const searchQueryPoolData = [
     {
         key: 'dashboard.analytic',
         path: `${DASHBOARDS_PREFIX_PATH}/analytic`,
-        title: 'Analytic',
+        title: 'Profitability',
         icon: 'dashboardAnalytic',
         category: 'Dashboard',
         categoryTitle: 'Dashboard',

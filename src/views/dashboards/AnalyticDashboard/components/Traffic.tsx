@@ -22,26 +22,26 @@ const columnHelper = createColumnHelper<TrafficData>()
 
 const columns = [
     columnHelper.accessor('source', {
-        header: 'Source',
+        header: 'Channel',
         cell: (props) => {
             const { source } = props.row.original
             return <div className="heading-text font-semibold">{source}</div>
         },
     }),
     columnHelper.accessor('visits', {
-        header: 'Visits',
+        header: 'New Players',
     }),
     columnHelper.accessor('uniqueVisitors', {
-        header: 'Unique Visitors',
+        header: 'Paying Players',
     }),
     columnHelper.accessor('bounceRate', {
-        header: 'Bounce Rate',
+        header: 'Payer Conversion (%)',
     }),
     columnHelper.accessor('avgSessionDuration', {
-        header: 'Avg. Session Duration',
+        header: 'Avg. Playtime',
     }),
     columnHelper.accessor('progress', {
-        header: 'Progress to Goal (%)',
+        header: 'Total Net Revenue (USD)',
         size: 150,
         cell: (props) => {
             const { progress } = props.row.original
@@ -70,17 +70,17 @@ const Traffic = ({ data = [] }: TrafficTableProps) => {
     return (
         <Card>
             <div className="flex items-center justify-between mb-6">
-                <h4>Traffic data</h4>
+                <h4>Player Acquisition Analytics</h4>
                 <CSVLink
-                    filename="traffic-data.csv"
+                    filename="player-acquisition-analytics.csv"
                     data={data.map((traffic) => {
                         return {
-                            Source: traffic.source,
-                            Visits: traffic.visits,
-                            'Unique visitors': traffic.uniqueVisitors,
-                            'Bounce rate': traffic.bounceRate,
-                            'Avg. session duration': traffic.avgSessionDuration,
-                            'Progress to goal': `${traffic.progress}%`,
+                            Channel: traffic.source,
+                            'New Players': traffic.visits,
+                            'Paying Players': traffic.uniqueVisitors,
+                            'Payer Conversion (%)': traffic.bounceRate,
+                            'Avg. Playtime': traffic.avgSessionDuration,
+                            'Total Net Revenue (USD)': `${traffic.progress}%`,
                         }
                     })}
                 >

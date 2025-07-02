@@ -75,31 +75,31 @@ const conceptsNavigationConfig: NavigationTree[] = [
             {
                 key: 'concepts.projects',
                 path: '',
-                title: 'Projects',
-                translateKey: 'nav.conceptsProjects.projects',
+                title: 'Studio',
+                translateKey: 'nav.conceptsProjects.studio',
                 icon: 'projects',
                 type: NAV_ITEM_TYPE_COLLAPSE,
                 authority: [ADMIN, USER],
                 meta: {
                     description: {
-                        translateKey: 'nav.conceptsProjects.projectsDesc',
-                        label: 'Manage and track projects',
+                        translateKey: 'nav.conceptsProjects.studioDesc',
+                        label: 'Manage and track your game studio',
                     },
                 },
                 subMenu: [
                     {
                         key: 'concepts.projects.scrumBoard',
                         path: `${CONCEPTS_PREFIX_PATH}/projects/scrum-board`,
-                        title: 'Scrum Board',
-                        translateKey: 'nav.conceptsProjects.scrumBoard',
+                        title: 'Dev Board',
+                        translateKey: 'nav.conceptsProjects.devBoard',
                         icon: 'projectScrumBoard',
                         type: NAV_ITEM_TYPE_ITEM,
                         authority: [ADMIN, USER],
                         meta: {
                             description: {
                                 translateKey:
-                                    'nav.conceptsProjects.scrumBoardDesc',
-                                label: 'Manage your scrum workflow',
+                                    'nav.conceptsProjects.devBoardDesc',
+                                label: 'Manage your development workflow',
                             },
                         },
                         subMenu: [],
@@ -107,16 +107,16 @@ const conceptsNavigationConfig: NavigationTree[] = [
                     {
                         key: 'concepts.projects.projectList',
                         path: `${CONCEPTS_PREFIX_PATH}/projects/project-list`,
-                        title: 'Project List',
-                        translateKey: 'nav.conceptsProjects.projectList',
+                        title: 'Game Portfolio',
+                        translateKey: 'nav.conceptsProjects.gamePortfolio',
                         icon: 'projectList',
                         type: NAV_ITEM_TYPE_ITEM,
                         authority: [ADMIN, USER],
                         meta: {
                             description: {
                                 translateKey:
-                                    'nav.conceptsProjects.projectListDesc',
-                                label: 'Organize all projects',
+                                    'nav.conceptsProjects.gamePortfolioDesc',
+                                label: 'Organize all your games',
                             },
                         },
                         subMenu: [],
@@ -158,16 +158,16 @@ const conceptsNavigationConfig: NavigationTree[] = [
                     {
                         key: 'concepts.projects.projectIssue',
                         path: `${CONCEPTS_PREFIX_PATH}/projects/tasks/1`,
-                        title: 'Issue',
-                        translateKey: 'nav.conceptsProjects.projectIssue',
+                        title: 'Ticket',
+                        translateKey: 'nav.conceptsProjects.projectTicket',
                         icon: 'projectIssue',
                         type: NAV_ITEM_TYPE_ITEM,
                         authority: [ADMIN, USER],
                         meta: {
                             description: {
                                 translateKey:
-                                    'nav.conceptsProjects.projectIssueDesc',
-                                label: 'Resolve project issues',
+                                    'nav.conceptsProjects.projectTicketDesc',
+                                label: 'Resolve development tickets',
                             },
                         },
                         subMenu: [],

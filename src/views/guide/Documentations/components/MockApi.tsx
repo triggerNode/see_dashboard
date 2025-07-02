@@ -12,7 +12,7 @@ const MockApi = () => {
                 for unit testing.
             </p>
             <p>
-                Ecme utilizes the{' '}
+                {'{s}ee'} utilizes the{' '}
                 <a
                     href="https://github.com/ctimmerm/axios-mock-adapter"
                     target="_blank"

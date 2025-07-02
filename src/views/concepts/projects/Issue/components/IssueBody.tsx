@@ -21,6 +21,8 @@ import {
     TbUser,
     TbClock,
     TbCheck,
+    TbClockHour4,
+    TbMoneybag,
 } from 'react-icons/tb'
 import { useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
@@ -28,13 +30,13 @@ import type { RichTextEditorRef } from '@/components/shared/RichTextEditor'
 
 export const labelList = [
     { id: '1', title: 'Bug' },
-    { id: '2', title: 'Live issue' },
+    { id: '2', title: 'Player-Facing' },
     { id: '3', title: 'Task' },
     { id: '4', title: 'Optimization' },
 ]
 
 export const taskLabelColors: Record<string, string> = {
-    'Live issue': 'bg-rose-200 dark:bg-rose-200 dark:text-gray-900',
+    'Player-Facing': 'bg-rose-200 dark:bg-rose-200 dark:text-gray-900',
     Task: 'bg-blue-200 dark:bg-blue-200 dark:text-gray-900',
     Bug: 'bg-amber-200 dark:bg-amber-200 dark:text-gray-900',
     Optimization: 'bg-purple-200 dark:bg-purple-200 dark:text-gray-900',
@@ -124,6 +126,18 @@ const IssueBody = () => {
     const handleDescriptionChange = (value: string) => {
         const newData = createNewData()
         newData.description = value
+        updateIssueData(newData)
+    }
+
+    const handleHoursLoggedChange = (hours: number) => {
+        const newData = createNewData()
+        newData.hoursLogged = hours
+        updateIssueData(newData)
+    }
+
+    const handleCostImpactChange = (cost: string) => {
+        const newData = createNewData()
+        newData.costImpact = cost
         updateIssueData(newData)
     }
 
@@ -334,6 +348,37 @@ const IssueBody = () => {
                                 clearable={false}
                                 onChange={(date) =>
                                     handleDueDateChange(date as Date)
+                                }
+                            />
+                        </div>
+                    </IssueField>
+                    <IssueField title="Hours Logged" icon={<TbClockHour4 />}>
+                        <div className="flex items-center gap-1 px-3 rounded-xl hover:bg-gray-200 dark:hover:bg-gray-700 focus:bg-gray-200 dark:focus:bg-gray-700 w-full min-h-[46px]">
+                            <input
+                                type="number"
+                                min="0"
+                                step="0.5"
+                                placeholder="0"
+                                className="bg-transparent border-none outline-none w-full font-semibold"
+                                value={issueData.hoursLogged || ''}
+                                onChange={(e) =>
+                                    handleHoursLoggedChange(
+                                        parseFloat(e.target.value) || 0,
+                                    )
+                                }
+                            />
+                            <span className="text-gray-500">hours</span>
+                        </div>
+                    </IssueField>
+                    <IssueField title="Cost Impact" icon={<TbMoneybag />}>
+                        <div className="flex items-center gap-1 px-3 rounded-xl hover:bg-gray-200 dark:hover:bg-gray-700 focus:bg-gray-200 dark:focus:bg-gray-700 w-full min-h-[46px]">
+                            <input
+                                type="text"
+                                placeholder="e.g., $500 in dev costs"
+                                className="bg-transparent border-none outline-none w-full font-semibold"
+                                value={issueData.costImpact || ''}
+                                onChange={(e) =>
+                                    handleCostImpactChange(e.target.value)
                                 }
                             />
                         </div>

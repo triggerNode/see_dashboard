@@ -20,8 +20,11 @@ const AnalyticHeader = ({
     return (
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-2 gap-4">
             <div>
-                <h4 className="mb-1">Analytic overview</h4>
-                <p>Explore the metrics to understand trends and drive.</p>
+                <h4 className="mb-1">Financial Intel</h4>
+                <p>
+                    Analyze profit metrics and financial KPIs to optimize your
+                    game studio&apos;s revenue performance.
+                </p>
             </div>
             <div className="flex items-center gap-2">
                 <span>Show by:</span>

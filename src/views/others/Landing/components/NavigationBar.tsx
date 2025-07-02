@@ -31,7 +31,7 @@ const navMenu = [
     {
         title: 'Documentations',
         value: 'documentations',
-        href: 'https://ecme-react.themenate.net/guide/documentation/introduction',
+        href: 'https://see.triggernode.com/guide/documentation/introduction',
     },
 ]
 

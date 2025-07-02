@@ -2,12 +2,7 @@ import Card from '@/components/ui/Card'
 import GrowShrinkValue from '@/components/shared/GrowShrinkValue'
 import classNames from '@/utils/classNames'
 import { NumericFormat } from 'react-number-format'
-import {
-    TbMoneybag,
-    TbReportMoney,
-    TbRefreshAlert,
-    TbMagnet,
-} from 'react-icons/tb'
+import { TbUsers, TbServer, TbCash, TbUserPlus } from 'react-icons/tb'
 import type { ReactNode } from 'react'
 import type { KpiSummaryData } from '../types'
 
@@ -64,26 +59,25 @@ const KpiSummary = ({ data }: KpiSummaryProps) => {
     return (
         <Card>
             <div className="flex items-center justify-between">
-                <h4>Kpi summary</h4>
+                <h4>Live Operations KPI Summary</h4>
             </div>
             <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 mt-6">
                 <SummarySegment
-                    title="Total marketing spend"
+                    title="Concurrent Users (CCU)"
                     value={
                         <NumericFormat
-                            prefix="$"
                             displayType="text"
                             value={data.totalMarketingSpend.value}
                             thousandSeparator={true}
                         />
                     }
                     growShrink={data.totalMarketingSpend.growShrink}
-                    icon={<TbMoneybag />}
+                    icon={<TbUsers />}
                     iconClass="bg-rose-200"
                     className="border-b border-r-0 md:border-b-0 md:ltr:border-r md:rtl:border-l border-gray-200 dark:border-gray-700"
                 />
                 <SummarySegment
-                    title="ROI"
+                    title="Server Health"
                     value={
                         <NumericFormat
                             suffix="%"
@@ -93,27 +87,26 @@ const KpiSummary = ({ data }: KpiSummaryProps) => {
                         />
                     }
                     growShrink={data.roi.growShrink}
-                    icon={<TbReportMoney />}
+                    icon={<TbServer />}
                     iconClass="bg-sky-200"
                     className="border-b md:border-b-0 xl:ltr:border-r xl:rtl:border-l border-gray-200 dark:border-gray-700"
                 />
                 <SummarySegment
-                    title="Conversion rates"
+                    title="Revenue Rate (Robux/hr)"
                     value={
                         <NumericFormat
-                            suffix="%"
                             displayType="text"
                             value={data.conversionRates.value}
                             thousandSeparator={true}
                         />
                     }
                     growShrink={data.conversionRates.growShrink}
-                    icon={<TbRefreshAlert />}
+                    icon={<TbCash />}
                     iconClass="bg-emerald-200"
                     className="border-b border-r-0 md:border-b-0 md:ltr:border-r md:rtl:border-l border-gray-200 dark:border-gray-700"
                 />
                 <SummarySegment
-                    title="Total leads"
+                    title="New Players Today"
                     value={
                         <NumericFormat
                             displayType="text"
@@ -122,7 +115,7 @@ const KpiSummary = ({ data }: KpiSummaryProps) => {
                         />
                     }
                     growShrink={data.totalLeads.growShrink}
-                    icon={<TbMagnet />}
+                    icon={<TbUserPlus />}
                     iconClass="bg-purple-200"
                 />
             </div>

@@ -1,0 +1,146 @@
+[
+    {
+        "page": "/dashboards/ecommerce",
+        "componentId": "Overview",
+        "displayName": "Net Profit (USD)",
+        "metric": "Net Profit",
+        "formula": "([Total Robux Revenue] * [DevEx Rate]) + [Direct USD Revenue] - ([Total Robux Costs] * [DevEx Rate]) - [Total USD Costs]",
+        "refreshFreq": "Daily",
+        "priority": 1
+    },
+    {
+        "page": "/dashboards/ecommerce",
+        "componentId": "StatisticCard_Profit",
+        "displayName": "Gross Revenue (USD)",
+        "metric": "Gross Revenue",
+        "formula": "([Total Robux Revenue] * [DevEx Rate]) + [Direct USD Revenue]",
+        "refreshFreq": "Daily",
+        "priority": 1
+    },
+    {
+        "page": "/dashboards/ecommerce",
+        "componentId": "StatisticCard_Orders",
+        "displayName": "Total Costs (USD)",
+        "metric": "Total Costs",
+        "formula": "([Total Robux Costs] * [DevEx Rate]) + [Total USD Costs]",
+        "refreshFreq": "Daily",
+        "priority": 1
+    },
+    {
+        "page": "/dashboards/ecommerce",
+        "componentId": "StatisticCard_Impressions",
+        "displayName": "Effective Take-Home Rate",
+        "metric": "Effective Revenue Share",
+        "formula": "([Total Robux Revenue After Marketplace Fee] * [DevEx Rate]) / ([Total Gross Robux Revenue] / 0.7 * [Avg Robux Purchase Price in USD])",
+        "refreshFreq": "Monthly",
+        "priority": 2
+    },
+    {
+        "page": "/dashboards/ecommerce",
+        "componentId": "RecentOrder",
+        "displayName": "Live Transaction Feed (Self-Hosted)",
+        "metric": "Individual Sales Transactions",
+        "formula": "Endpoint: /api/v1/transactions/stream (from developer's own external database)",
+        "refreshFreq": "Real-time",
+        "priority": 2
+    },
+    {
+        "page": "/dashboards/analytic",
+        "componentId": "WebAnalytic",
+        "displayName": "Profitability vs. Engagement",
+        "metric": "Correlation(Net Profit, Daily Active Users)",
+        "formula": "Correlate([Metric: Net Profit], [Metric: DAU from Roblox Analytics])",
+        "refreshFreq": "Daily",
+        "priority": 1
+    },
+    {
+        "page": "/dashboards/analytic",
+        "componentId": "Metrics_Visitors",
+        "displayName": "Daily Active Users (DAU)",
+        "metric": "DAU",
+        "formula": "Endpoint: Roblox Creator Hub Analytics",
+        "refreshFreq": "Daily",
+        "priority": 2
+    },
+    {
+        "page": "/dashboards/analytic",
+        "componentId": "TopPerformingPages",
+        "displayName": "Project Profit & Loss (P&L)",
+        "metric": "Net Profit per Project",
+        "formula": "[Project Gross Revenue] - [Allocated Shared Costs] - [Project-Direct Costs]",
+        "refreshFreq": "Daily",
+        "priority": 1
+    },
+    {
+        "page": "/dashboards/project",
+        "componentId": "TaskOverview",
+        "displayName": "Developer Cost Breakdown",
+        "metric": "Cost per Labor Category",
+        "formula": "SUM([Manually Logged Dev Hours] * [Hourly Rate]) by category (e.g., Programming, Art, Marketing)",
+        "refreshFreq": "Daily",
+        "priority": 1
+    },
+    {
+        "page": "/dashboards/project",
+        "componentId": "ProjectOverview",
+        "displayName": "Projected Monthly Burn Rate",
+        "metric": "Monthly Burn Rate",
+        "formula": "SUM([Fixed Monthly Salaries]) + AVG([Monthly Contractor Costs]) + AVG([Monthly Software Subscriptions])",
+        "refreshFreq": "Daily",
+        "priority": 1
+    },
+    {
+        "page": "/dashboards/marketing",
+        "componentId": "AdsPerformance",
+        "displayName": "Return on Ad Spend (ROAS)",
+        "metric": "ROAS",
+        "formula": "([Revenue from Ad-Acquired Users] - [Manually Logged Ad Spend in USD]) / [Manually Logged Ad Spend in USD]",
+        "refreshFreq": "Daily",
+        "priority": 1
+    },
+    {
+        "page": "/concepts/customers/customer-list",
+        "componentId": "CustomerListTable",
+        "displayName": "Player Lifetime Value (LTV)",
+        "metric": "Player LTV",
+        "formula": "Endpoint: /api/v1/player-ltv (from developer's own external database)",
+        "refreshFreq": "Daily",
+        "priority": 2
+    },
+    {
+        "page": "/concepts/products/product-list",
+        "componentId": "ProductListTable",
+        "displayName": "Asset Cost Ledger",
+        "metric": "Manually Tracked Asset Costs",
+        "formula": "Endpoint: /api/v1/asset-costs (from internal financial tracking system)",
+        "refreshFreq": "Daily",
+        "priority": 1
+    },
+    {
+        "page": "/ui-components/form-control",
+        "componentId": "Basic",
+        "displayName": "Manual Cost Entry Form",
+        "metric": "Manual Cost Input",
+        "formula": "N/A (User Input Form)",
+        "refreshFreq": "On-demand",
+        "priority": 1
+    },
+    {
+        "page": "/dashboards/ecommerce",
+        "componentId": "RevenueByChannel",
+        "displayName": "Revenue Source Breakdown",
+        "metric": "Revenue by Source",
+        "formula": "SUM(Revenue) Grouped by [Game Pass, Dev Product, Premium Payouts, Direct USD Revenue]",
+        "refreshFreq": "Daily",
+        "priority": 2
+    },
+    {
+        "page": "/dashboards/ecommerce",
+        "componentId": "TopProduct",
+        "displayName": "Top Monetizing Items",
+        "metric": "Revenue per Game Asset",
+        "formula": "Endpoint: /api/v1/revenue-by-asset (from developer's own external database)",
+        "refreshFreq": "Daily",
+        "priority": 3
+    }
+]

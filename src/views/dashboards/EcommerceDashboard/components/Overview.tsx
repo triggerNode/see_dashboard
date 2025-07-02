@@ -110,7 +110,7 @@ const Overview = ({ data }: StatisticGroupsProps) => {
     return (
         <Card>
             <div className="flex items-center justify-between">
-                <h4>Overview</h4>
+                <h4>Net Profit (USD)</h4>
                 <Select
                     className="w-[120px]"
                     size="sm"
@@ -129,7 +129,7 @@ const Overview = ({ data }: StatisticGroupsProps) => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 rounded-2xl p-3 bg-gray-100 dark:bg-gray-700 mt-4">
                 <StatisticCard
-                    title="Total profit"
+                    title="Gross Revenue (USD)"
                     value={
                         <NumericFormat
                             displayType="text"
@@ -147,7 +147,7 @@ const Overview = ({ data }: StatisticGroupsProps) => {
                     onClick={setSelectedCategory}
                 />
                 <StatisticCard
-                    title="Total order"
+                    title="Total Costs (USD)"
                     value={
                         <NumericFormat
                             displayType="text"
@@ -164,7 +164,7 @@ const Overview = ({ data }: StatisticGroupsProps) => {
                     onClick={setSelectedCategory}
                 />
                 <StatisticCard
-                    title="Impression"
+                    title="Effective Take-Home Rate"
                     value={
                         <AbbreviateNumber
                             value={data.totalImpression[selectedPeriod].value}

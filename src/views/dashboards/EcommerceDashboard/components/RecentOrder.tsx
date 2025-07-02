@@ -62,7 +62,7 @@ const columnHelper = createColumnHelper<Order>()
 
 const columns = [
     columnHelper.accessor('id', {
-        header: 'Order',
+        header: 'Transaction ID',
         cell: (props) => <OrderColumn row={props.row.original} />,
     }),
     columnHelper.accessor('status', {
@@ -89,10 +89,10 @@ const columns = [
         },
     }),
     columnHelper.accessor('customer', {
-        header: 'Customer',
+        header: 'Player',
     }),
     columnHelper.accessor('totalAmount', {
-        header: 'Amount spent',
+        header: 'Amount (Robux)',
         cell: (props) => {
             const { totalAmount } = props.row.original
             return (
@@ -100,6 +100,23 @@ const columns = [
                     className="heading-text font-bold"
                     displayType="text"
                     value={(Math.round(totalAmount * 100) / 100).toFixed(2)}
+                    prefix={'$'}
+                    thousandSeparator={true}
+                />
+            )
+        },
+    }),
+    columnHelper.accessor('totalAmount', {
+        header: 'Est. Net (USD)',
+        id: 'estimatedNet',
+        cell: (props) => {
+            const { totalAmount } = props.row.original
+            const estimatedNet = totalAmount * 0.7 * 0.0035 // Example: 70% after fees, $0.0035 per Robux
+            return (
+                <NumericFormat
+                    className="heading-text font-bold"
+                    displayType="text"
+                    value={(Math.round(estimatedNet * 100) / 100).toFixed(2)}
                     prefix={'$'}
                     thousandSeparator={true}
                 />
@@ -120,7 +137,8 @@ const RecentOrder = ({ data = [] }: RecentOrderProps) => {
     return (
         <Card>
             <div className="flex items-center justify-between mb-6">
-                <h4>Recent Orders</h4>
+                {/* TODO: shorten label */}
+                <h4>Live Transaction Feed (Self-Hosted)</h4>
                 <Button
                     size="sm"
                     onClick={() => navigate('/concepts/orders/order-list')}

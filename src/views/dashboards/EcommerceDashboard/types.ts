@@ -31,6 +31,11 @@ export type Product = {
     img: string
     sales: number
     growShrink: number
+    robuxRevenue: number
+    devExRate: number
+    creationCost: number
+    netProfit: number
+    roi: number
 }
 
 export type CustomerDemographicData = {

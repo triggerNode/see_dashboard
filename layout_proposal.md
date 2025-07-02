@@ -1,0 +1,11 @@
+| Page                            | Component                          | Reason it Proves Mission                                                                                                                 |
+| ------------------------------- | ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| /dashboards/ecommerce           | Sales overview line chart          | Visualizes Net Profit (USD) over time, the ultimate measure of financial success for the creator.                                        |
+| /dashboards/ecommerce           | KPI statistic cards                | Provides at-a-glance totals for Gross Revenue and Total Costs, the two primary levers of profitability.                                  |
+| /dashboards/analytic            | Web analytics line chart           | Correlates Net Profit with Daily Active Users to prove how engagement directly impacts the bottom line.                                  |
+| /dashboards/analytic            | Top performing pages data table    | Functions as a Project P&L, allocating shared studio costs to determine the true net profit of each individual game.                     |
+| /dashboards/project             | Task overview bar chart            | Breaks down the single largest expense category—Developer Labor Costs—to understand where resources are being spent.                     |
+| /dashboards/project             | Project overview statistics widget | Calculates the studio's Monthly Burn Rate, which is critical for financial planning and runway forecasting.                              |
+| /dashboards/marketing           | Ads performance chart              | Measures Return on Ad Spend (ROAS), ensuring marketing dollars are directly contributing to profit, not just vanity metrics.             |
+| /concepts/products/product-list | Product list data table            | Serves as the Asset Cost Ledger, a necessary tool to manually track and account for all external, real-world development costs.          |
+| /ui-components/form-control     | Basic form                         | Acts as the Manual Cost Entry Form, the foundational tool enabling the entire "true net profit" calculation by capturing external costs. |

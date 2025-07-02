@@ -71,7 +71,7 @@ const RecentCampaign = ({ data }: RecentCampaignProps) => {
     return (
         <Card>
             <div className="flex items-center justify-between">
-                <h4>Campaigns</h4>
+                <h4>Community & Influencer Campaigns</h4>
                 <div>
                     <CreateCampaign onCreate={handleCreate} />
                 </div>
@@ -83,8 +83,8 @@ const RecentCampaign = ({ data }: RecentCampaignProps) => {
                             <Th></Th>
                             <Th>Campaign</Th>
                             <Th>Status</Th>
-                            <Th>Budget</Th>
-                            <Th>Conversions</Th>
+                            <Th>Cost (USD)</Th>
+                            <Th>Result</Th>
                             <Th>Start</Th>
                             <Th>End</Th>
                         </Tr>

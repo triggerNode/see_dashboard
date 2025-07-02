@@ -6,7 +6,7 @@ const RouteAndNav = () => {
     return (
         <>
             <p>
-                Ecme uses{' '}
+                {'{s}ee'} uses{' '}
                 <a
                     href="https://reactrouter.com/"
                     target="_blank"
@@ -70,10 +70,10 @@ export const protectedRoutes = [
             <div className="mt-10" id="authority">
                 <h5>Authority</h5>
                 <p className="mt-1">
-                    Ecme routes support simple role-based access control. You
-                    can specify the roles that have access to a route by using
-                    the <code>authority</code> field. For example, the following
-                    route is only accessible to users with the{' '}
+                    {'{s}ee'} routes support simple role-based access control.
+                    You can specify the roles that have access to a route by
+                    using the <code>authority</code> field. For example, the
+                    following route is only accessible to users with the{' '}
                     <code>'admin'</code> or <code>'user'</code> roles. If the{' '}
                     <code>authority</code> field is left as an empty array, the
                     route will be open to all roles.

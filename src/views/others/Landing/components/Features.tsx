@@ -202,7 +202,7 @@ const Features = ({ mode, onModeChange, schema, setSchema }: FeaturesProps) => {
                     viewport={{ once: true }}
                 >
                     <motion.h2 className="my-6 text-5xl">
-                        Discover the Power of Ecme
+                        Discover the Power of {'{s}ee'}
                     </motion.h2>
                     <motion.p className="mx-auto max-w-[600px]">
                         Crafted for performance, scalability, and ease of
@@ -309,7 +309,7 @@ const Features = ({ mode, onModeChange, schema, setSchema }: FeaturesProps) => {
                                                         src="/img/landing/layouts/documentation.png"
                                                         width={630}
                                                         height={562}
-                                                        alt="Ecme documentaion"
+                                                        alt="{s}ee documentation"
                                                     />
                                                 )}
                                                 {mode === MODE_DARK && (
@@ -318,7 +318,7 @@ const Features = ({ mode, onModeChange, schema, setSchema }: FeaturesProps) => {
                                                         src="/img/landing/layouts/documentation-dark.png"
                                                         width={630}
                                                         height={562}
-                                                        alt="Ecme documentaion"
+                                                        alt="{s}ee documentation"
                                                     />
                                                 )}
                                             </div>

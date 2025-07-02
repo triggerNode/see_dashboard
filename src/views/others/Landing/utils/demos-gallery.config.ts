@@ -16,7 +16,7 @@ export const allDemos = [
     },
     {
         id: 'dashboardAnalytic',
-        name: 'Analytic',
+        name: 'Profitability',
         path: '/dashboards/analytic',
     },
 ]

@@ -15,12 +15,12 @@ const TopPerformingPages = ({ data }: TopPerformingPagesProps) => {
     return (
         <Card>
             <div className="flex items-center justify-between">
-                <h4>Top pages</h4>
+                <h4>Game P&L</h4>
                 <CSVLink
-                    filename="top-page.csv"
+                    filename="game-pnl.csv"
                     data={data.map((row) => {
                         return {
-                            pageUrl: row.pageUrl,
+                            gameTitle: row.pageUrl,
                             views: row.views.amount,
                             'View growth': `${row.views.growth}%`,
                             'Unique visitors': row.uniqueVisitor.amount,
@@ -35,10 +35,12 @@ const TopPerformingPages = ({ data }: TopPerformingPagesProps) => {
                 <Table hoverable={false}>
                     <THead>
                         <Tr>
-                            <Th className="px-0!">Page url</Th>
-                            <Th className="text-right! max-w-[100px]">Views</Th>
+                            <Th className="px-0!">Game Title</Th>
+                            <Th className="text-right! max-w-[100px]">
+                                Net Revenue
+                            </Th>
                             <Th className="px-0! text-right! max-w-[100px]">
-                                Unique visitors
+                                Active Players
                             </Th>
                         </Tr>
                     </THead>

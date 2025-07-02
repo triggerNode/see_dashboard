@@ -24,7 +24,7 @@ const demos = [
     {
         mdName: 'Basic',
         mdPath: mdPath,
-        title: 'Basic',
+        title: 'Manual Cost Entry Form',
         desc: `Sample usage of a simple form with validation.`,
         component: <Basic />,
     },

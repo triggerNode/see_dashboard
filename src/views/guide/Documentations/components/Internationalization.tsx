@@ -5,7 +5,7 @@ const Internationalization = () => {
     return (
         <>
             <p>
-                Ecme uses{' '}
+                {'{s}ee'} uses{' '}
                 <a
                     rel="noopener"
                     target="_new"
@@ -21,8 +21,8 @@ const Internationalization = () => {
                 <h5>Translating text</h5>
                 <p className="mt-1">
                     To translate text within your components, you can use the{' '}
-                    <code>useTranslation</code> hook provided by Ecme. This hook
-                    wraps the standard <code>useTranslation</code> from{' '}
+                    <code>useTranslation</code> hook provided by {'{s}ee'}. This
+                    hook wraps the standard <code>useTranslation</code> from{' '}
                     <code>react-i18next</code> and allows you to access the
                     translation function <code>t</code> for translating keys
                     defined in your locale files.

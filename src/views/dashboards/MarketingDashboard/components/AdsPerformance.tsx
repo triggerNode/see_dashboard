@@ -61,7 +61,7 @@ const AdsPerformance = ({ data }: AdsPerformance) => {
     return (
         <Card>
             <div className="flex items-center justify-between">
-                <h4>Ads performance</h4>
+                <h4>On-Platform Ad Performance</h4>
                 <div>
                     <Segment
                         className="gap-1"
