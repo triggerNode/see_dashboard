@@ -1,3 +1,6 @@
 {
-    "importMap": "https://deno.land/x/supabase_edge_runtime/import_map.json"
+    "imports": {
+        "https://deno.land/std@0.203.0/http/server.ts": "https://deno.land/std@0.203.0/http/server.ts",
+        "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2.50.2"
+    }
 }

@@ -1,5 +1,5 @@
 import { serve } from 'https://deno.land/std@0.203.0/http/server.ts'
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.50.2'
+import { createClient } from '@supabase/supabase-js'
 
 const SOURCE_URL =
     'https://en.help.roblox.com/hc/en-us/articles/203314410-Exchange-Robux-For-Real-Money-DevEx'
