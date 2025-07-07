@@ -69,3 +69,22 @@ export interface SupabaseServiceType {
         data: Partial<ProjectData>,
     ) => Promise<ApiResponse<ProjectData>>
 }
+
+// True-Profit KPI API response type
+export interface TrueProfitSummary {
+    trueNetUSDProfit: number
+    vsPreviousPeriodChange: number
+    sparklineData: { date: string; profit: number }[]
+    waterfallData: {
+        series: { data: number[] }[]
+        categories: string[]
+    }
+}
+
+// Profitability Leaderboard API response type
+export interface LeaderboardRow {
+    roblox_item_id: number
+    item_name: string
+    net_usd_profit: number
+    units_sold: number
+}

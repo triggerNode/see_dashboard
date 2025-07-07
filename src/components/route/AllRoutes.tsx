@@ -2,6 +2,7 @@ import ProtectedRoute from './ProtectedRoute'
 import PublicRoute from './PublicRoute'
 import AuthorityGuard from './AuthorityGuard'
 import AppRoute from './AppRoute'
+import GatedRoute from './GatedRoute'
 import PageContainer from '@/components/template/PageContainer'
 import { protectedRoutes, publicRoutes } from '@/configs/routes.config'
 import appConfig from '@/configs/app.config'
@@ -21,6 +22,14 @@ const { authenticatedEntryPath } = appConfig
 const AllRoutes = (props: AllRoutesProps) => {
     const { user } = useAuth()
 
+    // Separate dashboard routes from lab routes
+    const dashboardRoutes = protectedRoutes.filter((route) =>
+        route.path.startsWith('/dashboards/'),
+    )
+    const labRoutes = protectedRoutes.filter(
+        (route) => !route.path.startsWith('/dashboards/'),
+    )
+
     return (
         <Routes>
             <Route path="/" element={<ProtectedRoute />}>
@@ -28,7 +37,8 @@ const AllRoutes = (props: AllRoutesProps) => {
                     path="/"
                     element={<Navigate replace to={authenticatedEntryPath} />}
                 />
-                {protectedRoutes.map((route, index) => (
+                {/* Dashboard routes - always visible */}
+                {dashboardRoutes.map((route, index) => (
                     <Route
                         key={route.key + index}
                         path={route.path}
@@ -48,6 +58,29 @@ const AllRoutes = (props: AllRoutesProps) => {
                         }
                     />
                 ))}
+                {/* Lab routes - gated by feature flag */}
+                <Route path="/*" element={<GatedRoute gate="showLabs" />}>
+                    {labRoutes.map((route, index) => (
+                        <Route
+                            key={route.key + index}
+                            path={route.path.replace(/^\//, '')}
+                            element={
+                                <AuthorityGuard
+                                    userAuthority={user.authority}
+                                    authority={route.authority}
+                                >
+                                    <PageContainer {...props} {...route.meta}>
+                                        <AppRoute
+                                            routeKey={route.key}
+                                            component={route.component}
+                                            {...route.meta}
+                                        />
+                                    </PageContainer>
+                                </AuthorityGuard>
+                            }
+                        />
+                    ))}
+                </Route>
                 <Route path="*" element={<Navigate replace to="/" />} />
             </Route>
             <Route path="/" element={<PublicRoute />}>

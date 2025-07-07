@@ -7,7 +7,7 @@ const dashboardsRoute: Routes = [
     {
         key: 'dashboard.ecommerce',
         path: `${DASHBOARDS_PREFIX_PATH}/ecommerce`,
-        component: lazy(() => import('@/views/dashboards/EcommerceDashboard')),
+        component: lazy(() => import('@/views/dashboards/ProfitDashboard')),
         authority: [ADMIN, USER],
         meta: {
             pageContainerType: 'contained',

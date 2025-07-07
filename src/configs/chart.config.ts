@@ -183,3 +183,46 @@ export const apexRadarChartDefultOption: ApexOptions = {
     },
     colors: [...COLORS],
 }
+
+export const apexWaterfallChartDefaultOption: ApexOptions = {
+    chart: {
+        type: 'bar',
+        zoom: {
+            enabled: false,
+        },
+        toolbar: {
+            show: false,
+        },
+    },
+    plotOptions: {
+        bar: {
+            horizontal: false,
+            columnWidth: '55%',
+            borderRadius: 4,
+            borderRadiusApplication: 'end',
+        },
+    },
+    colors: ['#10B981', '#EF4444', '#10B981'], // Emerald for positive, Red for negative, Emerald for final
+    dataLabels: {
+        enabled: true,
+        formatter: function (val: number) {
+            return `${(val / 1000).toFixed(1)}k`
+        },
+    },
+    xaxis: {
+        categories: [],
+    },
+    yaxis: {
+        labels: {
+            formatter: function (val: number) {
+                return `${(val / 1000).toFixed(0)}k R$`
+            },
+        },
+    },
+    grid: {
+        show: false,
+    },
+    legend: {
+        show: false,
+    },
+}

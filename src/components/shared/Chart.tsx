@@ -6,15 +6,16 @@ import {
     apexAreaChartDefaultOption,
     apexDonutChartDefaultOption,
     apexRadarChartDefultOption,
+    apexWaterfallChartDefaultOption,
 } from '@/configs/chart.config'
 import { DIR_RTL } from '@/constants/theme.constant'
 import type { ApexOptions } from 'apexcharts'
 import type { Direction } from '@/@types/theme'
 import type { ReactNode } from 'react'
 
-const notDonut = ['line', 'bar', 'area']
+const notDonut = ['line', 'bar', 'area', 'waterfall']
 
-type ChartType = 'line' | 'bar' | 'area' | 'donut' | 'radar'
+type ChartType = 'line' | 'bar' | 'area' | 'donut' | 'radar' | 'waterfall'
 
 export interface ChartProps {
     series?: ApexOptions['series']
@@ -59,6 +60,8 @@ const Chart = (props: ChartProps) => {
                 return apexDonutChartDefaultOption
             case 'radar':
                 return apexRadarChartDefultOption
+            case 'waterfall':
+                return apexWaterfallChartDefaultOption
             default:
                 return apexLineChartDefaultOption
         }
@@ -109,6 +112,9 @@ const Chart = (props: ChartProps) => {
         }
     }
 
+    // Map waterfall to bar type for ApexCharts compatibility
+    const apexChartType = type === 'waterfall' ? 'bar' : type
+
     return (
         <div
             ref={chartRef}
@@ -117,7 +123,7 @@ const Chart = (props: ChartProps) => {
         >
             <ApexChart
                 options={options}
-                type={type}
+                type={apexChartType}
                 series={series}
                 width={width}
                 height={height}
